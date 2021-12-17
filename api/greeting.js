@@ -8,7 +8,8 @@ const goodbye = (req, res) => {
     res.send("bye...");
 }
 
+export default greeting;
+
 export {
-    greeting,
     goodbye
 }
