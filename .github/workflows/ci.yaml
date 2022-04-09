@@ -19,7 +19,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-        env: #as an environment variable
-          IFTTT_KEY: ${{ secrets.IFTTT_KEY }}
       - run: npm ci
-      - run: printenv && npm test
+      - name: Test
+        env: # repo secrets as environment variable
+          IFTTT_KEY: ${{ secrets.IFTTT_KEY }}
+        run: printenv && npm test
