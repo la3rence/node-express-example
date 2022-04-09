@@ -22,4 +22,4 @@ jobs:
         env: #as an environment variable
           IFTTT_KEY: ${{ secrets.IFTTT_KEY }}
       - run: npm ci
-      - run: npm test
+      - run: printenv && npm test
