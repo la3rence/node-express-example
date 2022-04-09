@@ -6,7 +6,7 @@ describe('E2E Test', () => {
   let server;
 
   before(done => {
-    server = app.listen(80, err => {
+    server = app.listen(3000, err => {
       if (err) {
         return done(err);
       }
