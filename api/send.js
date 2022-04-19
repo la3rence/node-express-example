@@ -1,5 +1,6 @@
-import cors from './../cors/wrapper.js'
+import cors from './../cors/wrapper.js';
 import fetch from "node-fetch";
+import 'dotenv/config';
 
 const iftttKey = process.env.IFTTT_KEY;
 const defaultImageUrl = "https://s3.bmp.ovh/imgs/2022/04/09/5da9d13f02880f41.png";
@@ -22,7 +23,7 @@ const fetchWebhook = async (eventName, value1, value2, value3) => {
 
 const sendToIfttt = async (req, res) => {
     let { event, text, link, imgUrl } = req.query;
-    console.log(`Sending to IFTTT: ${event} ${text} ${link} ${imgUrl}`);
+    // console.log(`Sending to IFTTT: ${event} ${text} ${link} ${imgUrl}`);
     if (event == "" || event == undefined || event == "undefined") {
         event = defaultEventName;
     }
