@@ -41,6 +41,16 @@ describe('E2E Test', () => {
       });
   })
 
+  it("should timeout when get SSE", function (done) {
+    const EXPECTED_TIMEOUT = 200;
+    this.timeout(EXPECTED_TIMEOUT + 100);
+    const timeout = setTimeout(done, EXPECTED_TIMEOUT);
+    request(app).get('/sse').expect(200, (err, res) => {
+      clearTimeout(timeout);
+      done(new Error('Unexpected Call'));
+    });
+  })
+
   after(() => {
     server.close();
   })
