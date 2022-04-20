@@ -51,6 +51,15 @@ describe('E2E Test', () => {
     });
   })
 
+  it("should return 408 due to slow", done => {
+    request(app).get("/slow").expect(408, (err, res) => {
+      if (err) {
+        return done(err);
+      }
+      done();
+    });
+  })
+
   after(() => {
     server.close();
   })
