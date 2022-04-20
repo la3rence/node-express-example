@@ -8,14 +8,17 @@ import { corsMiddleware } from './middleware/cors.js';
 import timeoutResponse from './middleware/timeout.js';
 
 const app = express();
-app.use(logger('dev'));
-app.use(timeoutResponse);
-app.use(corsMiddleware);
-app.get("/hello", hello);
-app.get("/bye", goodbye);
-app.get("/slow", slow);
-app.get("/send", send);
-app.get("/sse", sse);
-app.get("/", (req, res) => { res.send("Hello!") });
+const router = express.Router();
+router.use(logger('dev'));
+router.use(timeoutResponse);
+router.use(corsMiddleware);
+router.get("/hello", hello);
+router.get("/bye", goodbye);
+router.get("/slow", slow);
+router.get("/send", send);
+router.get("/sse", sse);
+router.get("/", (req, res) => { res.send("Hello!") });
+
+app.use('/api', router);
 
 export default app;
