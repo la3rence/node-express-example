@@ -1,5 +1,5 @@
 // Server Sent Event
-import cors from './../cors/wrapper.js'
+import cors from '../middleware/cors.js'
 
 const sse = (req, res) => {
   res.setHeader("Content-Type", "text/event-stream");

@@ -1,4 +1,4 @@
-import cors from './../cors/wrapper.js';
+import cors from '../middleware/cors.js';
 import fetch from "node-fetch";
 import 'dotenv/config';
 
