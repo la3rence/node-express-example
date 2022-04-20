@@ -1,8 +1,7 @@
 import request from 'supertest';
-import app from '../app.js';
+import app, { BASEPATH } from '../app.js';
 import { expect } from 'chai';
 
-const BASEPATH = "/api";
 describe('E2E Test', () => {
   let server;
 
@@ -29,7 +28,7 @@ describe('E2E Test', () => {
   it("should send to ifttt", done => {
     const username = process.env.USER
     request(app)
-      .get(BASEPATH + `/send?text=${username} is testing&link=github.com`)
+      .get(BASEPATH + `/send?text=${username} is testing&link=github.com&imgUrl=https://s2.loli.net/2022/04/20/U3QC4iA7kBpnYwb.png`)
       .expect(200, (err, res) => {
         if (err) {
           return done(err);
@@ -37,7 +36,7 @@ describe('E2E Test', () => {
         expect(res.body).to.have.property('event', 'event');
         expect(res.body).to.have.property('text', username + ' is testing');
         expect(res.body).to.have.property('link', 'github.com');
-        expect(res.body).to.have.property('imgUrl', 'https://s3.bmp.ovh/imgs/2022/04/09/5da9d13f02880f41.png');
+        expect(res.body).to.have.property('imgUrl', 'https://s2.loli.net/2022/04/20/U3QC4iA7kBpnYwb.png');
         expect(res.body).to.have.property('responseStatus', 200);
         done();
       });
