@@ -1,13 +1,26 @@
 import hello from './api/hello.js';
-import { goodbye } from "./api/hello.js";
+import { goodbye, slow } from "./api/hello.js";
 import send from './api/send.js';
 import express from 'express';
 import logger from 'morgan';
+import sse from './api/sse.js';
+import { corsMiddleware } from './middleware/cors.js';
+import timeoutResponse from './middleware/timeout.js';
 
 const app = express();
-app.use(logger('dev'));
-app.get("/hello", hello);
-app.get("/bye", goodbye);
-app.get("/send", send);
+const router = express.Router();
+router.use(logger('dev'));
+router.use(timeoutResponse);
+router.use(corsMiddleware);
+router.get("/hello", hello);
+router.get("/bye", goodbye);
+router.get("/slow", slow);
+router.get("/send", send);
+router.get("/sse", sse);
+router.get("/", (req, res) => { res.send("Hello!") });
+
+const BASEPATH = "/api";
+app.use(BASEPATH, router);
 
 export default app;
+export { BASEPATH };
