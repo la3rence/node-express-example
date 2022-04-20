@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "test": "mocha --timeout 10000 --exit",
-    "unit": "mocha -g 'slow' --timeout 10000 --exit"
+    "unit": "mocha --timeout 10000 --exit -g"
   },
   "author": "Lawrence",
   "license": "MIT",

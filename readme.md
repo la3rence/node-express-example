@@ -16,6 +16,9 @@ npm run test
 
 Using `mocha`, `chai` to do the E2E testing.
 
+Using `mocha -g ${keyword}` to execute the test cases with name contains `${keyword}`.
+or `npm run unit ${keyword`.
+
 ## Env
 
 One end point is using environment value. e.g., `IFTTT_KEY`.

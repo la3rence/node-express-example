@@ -19,6 +19,8 @@ router.get("/send", send);
 router.get("/sse", sse);
 router.get("/", (req, res) => { res.send("Hello!") });
 
-app.use('/api', router);
+const BASEPATH = "/api";
+app.use(BASEPATH, router);
 
 export default app;
+export { BASEPATH };
