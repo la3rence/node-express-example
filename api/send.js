@@ -21,6 +21,9 @@ const fetchWebhook = async (eventName, value1, value2, value3) => {
     return response;
 }
 
+/**
+#swagger.description = 'Send message to IFTTT Webhook'
+*/
 const sendToIfttt = async (req, res) => {
     let { event, text, link, imgUrl } = req.query;
     // console.log(`Sending to IFTTT: ${event} ${text} ${link} ${imgUrl}`);
@@ -35,3 +38,4 @@ const sendToIfttt = async (req, res) => {
 }
 
 export default cors(sendToIfttt);
+export { sendToIfttt };

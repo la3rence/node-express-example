@@ -1,15 +1,17 @@
-
 const hello = (req, res) => {
-    res.send("hello");
+    /* #swagger.parameters['name'] = {
+        in: 'body',
+        description: 'Some description...'
+    } */
+    const name = req.body.name;
+    console.log(name);
+    res.status(200).json({ "hello": name });
 }
-
-const sleep = time => new Promise(resolve => {
-    setTimeout(resolve, time);
-})
 
 export default hello;
 
 const goodbye = (req, res) => {
+    // #swagger.description = 'Send bye...'
     console.log("bye...")
     res.send("bye...")
 }
@@ -20,6 +22,10 @@ const slow = async (req, res) => {
     console.log("finally end! try to send response...")
     res.status(200).json({ "slow": "response" })
 }
+
+const sleep = time => new Promise(resolve => {
+    setTimeout(resolve, time);
+})
 
 export {
     goodbye, slow

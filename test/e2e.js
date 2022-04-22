@@ -16,7 +16,8 @@ describe('E2E Test', () => {
 
   it("should send a hello", (done) => {
     request(app)
-      .get(BASEPATH + '/hello')
+      .post(BASEPATH + '/hello')
+      .send({ name: 'world' })
       .expect(200, (err, res) => {
         if (err) {
           return done(err);
