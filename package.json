@@ -4,9 +4,10 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "start": "node server.js",
+    "start": "npm run swagger;node server.js",
     "test": "mocha --timeout 10000 --exit",
-    "unit": "mocha --timeout 10000 --exit -g"
+    "unit": "mocha --timeout 10000 --exit -g",
+    "swagger": "node ./swagger.js"
   },
   "author": "Lawrence",
   "license": "MIT",
@@ -14,12 +15,14 @@
     "dotenv": "16.0.0",
     "express": "4.17.3",
     "morgan": "1.10.0",
-    "node-fetch": "3.2.3"
+    "node-fetch": "3.2.3",
+    "swagger-ui-express": "4.3.0"
   },
   "devDependencies": {
     "chai": "4.3.6",
     "husky": "7.0.4",
     "mocha": "9.2.2",
-    "supertest": "6.2.2"
+    "supertest": "6.2.2",
+    "swagger-autogen": "2.21.1"
   }
 }
