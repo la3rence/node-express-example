@@ -1,13 +1,18 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "title": "My Express API",
-    "description": "Description",
+    "title": "Express API",
+    "description": "github.com/lonor/express-api",
     "version": "1.0.0"
   },
   "servers": [
     {
-      "url": "http://localhost:8080/api"
+      "url": "http://localhost:8080",
+      "description": "Local"
+    },
+    {
+      "url": "https://node.lawrenceli.vercel.app",
+      "description": "Vercel"
     }
   ],
   "paths": {

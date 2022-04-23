@@ -2,10 +2,20 @@ import swaggerAutogen from 'swagger-autogen';
 
 const doc = {
   info: {
-    title: 'My Express API',
-    description: 'Description',
+    title: 'Express API',
+    description: 'github.com/lonor/express-api',
   },
   host: 'localhost:8080',
+  servers: [
+    {
+      "url": "http://localhost:8080",
+      "description": "Local"
+    },
+    {
+      "url": "https://node.lawrenceli.vercel.app",
+      "description": "Vercel"
+    }
+  ],
   schemes: ['http'],
   basePath: '/api',
 };
