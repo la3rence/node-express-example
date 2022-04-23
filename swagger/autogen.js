@@ -5,19 +5,16 @@ const doc = {
     title: 'Express API',
     description: 'github.com/lonor/express-api',
   },
-  host: 'localhost:8080',
   servers: [
     {
-      "url": "http://localhost:8080",
+      "url": "http://localhost:8080/api",
       "description": "Local"
     },
     {
-      "url": "https://node.lawrenceli.vercel.app",
+      "url": "https://node.lawrenceli.vercel.app/api",
       "description": "Vercel"
     }
   ],
-  schemes: ['http'],
-  basePath: '/api',
 };
 
 const outputFile = './swagger/output.json';
