@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "title": "My API",
+    "title": "My Express API",
     "description": "Description",
     "version": "1.0.0"
   },
@@ -17,7 +17,7 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": "成功"
+            "description": "OK"
           }
         }
       }
@@ -28,7 +28,7 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": "成功"
+            "description": "OK"
           }
         }
       }
@@ -39,7 +39,7 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": "成功"
+            "description": "OK"
           }
         }
       }
@@ -79,7 +79,7 @@
         ],
         "responses": {
           "200": {
-            "description": "成功"
+            "description": "OK"
           }
         }
       }
@@ -90,7 +90,7 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": "成功"
+            "description": "OK"
           }
         }
       }
@@ -101,7 +101,7 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": "成功"
+            "description": "OK"
           }
         }
       }
@@ -112,7 +112,7 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": "成功"
+            "description": "OK"
           }
         }
       }

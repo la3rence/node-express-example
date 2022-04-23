@@ -6,17 +6,12 @@ import logger from 'morgan';
 import sse from './api/sse.js';
 import { corsMiddleware } from './middleware/cors.js';
 import timeoutResponse from './middleware/timeout.js';
-import swaggerUiExpress from 'swagger-ui-express';
-// import { createRequire } from "module";
-// const require = createRequire(import.meta.url);
-// const swaggerDoc = require('./swagger-output.json');
-import swagger from './api/docs.js';
-// or use nodejs 17: import doc from './swagger-output.json' assert { type: 'json' };
+import swagger, { swaggerUiExpress } from './swagger/serve.js';
 
 const app = express();
 const router = express.Router();
 router.use(logger('dev'));
-router.use(express.json()) ;
+router.use(express.json());
 router.use(timeoutResponse);
 router.use(corsMiddleware);
 router.post("/hello", hello);
@@ -31,5 +26,5 @@ const BASEPATH = "/api";
 app.use(BASEPATH, router);
 app.get("/", (req, res) => { res.send("Index") });
 
-export default app;
 export { BASEPATH };
+export default app;
