@@ -1,5 +1,4 @@
 {
-  "version": 2,
   "builds": [
     {
       "src": "app.js",
@@ -7,6 +6,10 @@
     }
   ],
   "routes": [
+    {
+      "src": "/api/docs/swagger-ui.css",
+      "dest": "https://petstore.swagger.io/swagger-ui.css"
+    },
     {
       "src": "(.*)",
       "dest": "app.js"
