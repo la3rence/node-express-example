@@ -11,8 +11,8 @@ import config from './swagger/apiconfig.js';
 
 const { BASEPATH, swaggerUIPath, swaggerJSON } = config;
 const app = express();
+app.use(logger('dev'));
 const router = express.Router();
-router.use(logger('dev'));
 router.use(express.json());
 router.use(timeoutResponse);
 router.use(corsMiddleware);
@@ -24,6 +24,6 @@ router.get("/sse", sse);
 router.use(swaggerUIPath, swaggerUiExpress.serve);
 router.get(swaggerUIPath, swaggerUiExpress.setup(swaggerJSON));
 app.use(BASEPATH, router);
-app.use(express.static('public'));
+app.use("/", express.static('public'));
 
 export default app;
