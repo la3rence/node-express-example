@@ -6,8 +6,11 @@ import hello, { goodbye, slow } from "./api/hello.js";
 import { sendToIfttt } from './api/send.js';
 import { corsMiddleware } from './middleware/cors.js';
 import timeoutResponse from './middleware/timeout.js';
-
 import config from './swagger/apiconfig.js';
+
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const { BASEPATH, swaggerUIPath, swaggerJSON } = config;
 const app = express();
@@ -24,6 +27,6 @@ router.get("/sse", sse);
 router.use(swaggerUIPath, swaggerUiExpress.serve);
 router.get(swaggerUIPath, swaggerUiExpress.setup(swaggerJSON));
 app.use(BASEPATH, router);
-app.use("/", express.static('public'));
+app.use("/", express.static(__dirname + '/public'));
 
 export default app;
