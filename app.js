@@ -6,11 +6,10 @@ import hello, { goodbye, slow } from "./api/hello.js";
 import { sendToIfttt } from './api/send.js';
 import { corsMiddleware } from './middleware/cors.js';
 import timeoutResponse from './middleware/timeout.js';
-import config from './swagger/apiconfig.js';
-
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 const __dirname = dirname(fileURLToPath(import.meta.url));
+import config from './swagger/apiconfig.js';
 
 const { BASEPATH, swaggerUIPath, swaggerJSON } = config;
 const app = express();
