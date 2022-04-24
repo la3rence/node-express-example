@@ -24,6 +24,6 @@ router.get("/sse", sse);
 router.use(swaggerUIPath, swaggerUiExpress.serve);
 router.get(swaggerUIPath, swaggerUiExpress.setup(swaggerJSON));
 app.use(BASEPATH, router);
-app.get("/", express.static('public'));
+app.use(express.static('public'));
 
 export default app;
