@@ -1,4 +1,7 @@
 import swaggerAutogen from 'swagger-autogen';
+import config from './apiconfig.js';
+
+const { BASEPATH, swaggerJSONPath, endpointFiles } = config;
 
 const doc = {
   info: {
@@ -7,20 +10,17 @@ const doc = {
   },
   servers: [
     {
-      "url": "http://localhost:8080/api",
+      "url": "http://localhost:8080" + BASEPATH,
       "description": "Local"
     },
     {
-      "url": "https://node.lawrenceli.vercel.app/api",
+      "url": "https://node.lawrenceli.vercel.app" + BASEPATH,
       "description": "Vercel"
     }
   ],
 };
 
-const outputFile = './swagger/output.json';
-const endpointsFiles = ['./app.js'];
-
 /* NOTE: if you use the express Router, you must pass in the 
    'endpointsFiles' only the root file where the route starts,
    such as index.js, app.js, routes.js, ... */
-swaggerAutogen({ openapi: '3.0.0' })(outputFile, endpointsFiles, doc);
+swaggerAutogen({ openapi: '3.0.0' })(swaggerJSONPath, endpointFiles, doc);
