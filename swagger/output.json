@@ -27,10 +27,19 @@
         }
       }
     },
-    "/bye": {
+    "/bye/{name}": {
       "get": {
         "description": "Send bye...",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -101,17 +110,6 @@
       }
     },
     "/": {
-      "get": {
-        "description": "",
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/docs": {
       "get": {
         "description": "",
         "parameters": [],

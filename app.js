@@ -1,13 +1,15 @@
-import hello from './api/hello.js';
-import { goodbye, slow } from "./api/hello.js";
-import { sendToIfttt } from './api/send.js';
 import express from 'express';
 import logger from 'morgan';
+import swaggerUiExpress from 'swagger-ui-express';
 import sse from './api/sse.js';
+import hello, { goodbye, slow } from "./api/hello.js";
+import { sendToIfttt } from './api/send.js';
 import { corsMiddleware } from './middleware/cors.js';
 import timeoutResponse from './middleware/timeout.js';
-import swagger, { swaggerUiExpress } from './swagger/serve.js';
 
+import config from './swagger/apiconfig.js';
+
+const { BASEPATH, swaggerUIPath, swaggerJSON } = config;
 const app = express();
 const router = express.Router();
 router.use(logger('dev'));
@@ -15,16 +17,13 @@ router.use(express.json());
 router.use(timeoutResponse);
 router.use(corsMiddleware);
 router.post("/hello", hello);
-router.get("/bye", goodbye);
+router.get("/bye/:name", goodbye);
 router.get("/slow", slow);
 router.get("/send", sendToIfttt);
 router.get("/sse", sse);
-router.get("/", (req, res) => { res.send("Hello!") });
-router.use("/docs", swaggerUiExpress.serve);
-router.get("/docs", swagger);
-const BASEPATH = "/api";
+router.use(swaggerUIPath, swaggerUiExpress.serve);
+router.get(swaggerUIPath, swaggerUiExpress.setup(swaggerJSON));
 app.use(BASEPATH, router);
-app.get("/", (req, res) => { res.send("Index") });
+app.get("/", express.static('public'));
 
-export { BASEPATH };
 export default app;

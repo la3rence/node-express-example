@@ -1,6 +1,8 @@
 import request from 'supertest';
-import app, { BASEPATH } from '../app.js';
 import { expect } from 'chai';
+import app from '../app.js';
+import config from './../swagger/apiconfig.js';
+const { BASEPATH } = config;
 
 describe('E2E Test', () => {
   let server;
