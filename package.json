@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npm run swagger;node server.js",
     "test": "mocha --timeout 10000 --exit",
-    "unit": "mocha --timeout 10000 --exit -g",
+    "test:grep": "mocha --timeout 10000 --exit -g",
     "swagger": "node ./swagger/autogen.js"
   },
   "author": "Lawrence",
