@@ -5,15 +5,10 @@ import config from './../swagger/apiconfig.js';
 const { BASEPATH } = config;
 
 describe('E2E Test', () => {
-  let server;
 
   before(done => {
-    server = app.listen(3000, err => {
-      if (err) {
-        return done(err);
-      }
-      done();
-    });
+    console.log("set up...")
+    done();
   })
 
   it("should send a hello", (done) => {
@@ -66,6 +61,6 @@ describe('E2E Test', () => {
   })
 
   after(() => {
-    server.close();
+    console.log("tear down...")
   })
 })

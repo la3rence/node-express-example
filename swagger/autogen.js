@@ -14,7 +14,7 @@ const doc = {
       "description": "Local"
     },
     {
-      "url": "https://node.lawrenceli.vercel.app" + BASEPATH,
+      "url": "https://node.lawrenceli.me" + BASEPATH,
       "description": "Vercel"
     }
   ],
