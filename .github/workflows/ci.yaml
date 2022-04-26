@@ -23,4 +23,7 @@ jobs:
       - name: Test
         env: # repo secrets as environment variable
           IFTTT_KEY: ${{ secrets.IFTTT_KEY }}
-        run: printenv && npm test
+        run: |
+          printenv
+          npm test
+          prettier --check .
