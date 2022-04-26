@@ -26,4 +26,4 @@ jobs:
         run: |
           printenv
           npm test
-          prettier --check .
+          npx prettier --check .
