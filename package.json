@@ -1,16 +1,23 @@
 {
-  "name": "express-api",
-  "version": "1.0.0",
-  "main": "server.js",
+  "name": "express-example",
+  "version": "0.0.1",
+  "exports": "./app.js",
   "type": "module",
+  "engines": {
+    "node": ">=14.16"
+  },
+  "author": "Lawrence",
+  "homepage": "https://github.com/Lonor/express-api",
+  "license": "MIT",
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  },
   "scripts": {
-    "start": "npm run swagger;node server.js",
+    "start": "npm run swagger; node server.js",
     "test": "mocha --timeout 10000 --exit",
     "test:grep": "mocha --timeout 10000 --exit -g",
     "swagger": "node ./swagger/autogen.js"
   },
-  "author": "Lawrence",
-  "license": "MIT",
   "dependencies": {
     "dotenv": "16.0.0",
     "express": "4.18.0",
@@ -21,7 +28,9 @@
   "devDependencies": {
     "chai": "4.3.6",
     "husky": "7.0.4",
+    "lint-staged": "12.4.0",
     "mocha": "9.2.2",
+    "prettier": "2.6.2",
     "supertest": "6.2.2",
     "swagger-autogen": "2.21.1"
   }

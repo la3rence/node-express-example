@@ -1,5 +1,5 @@
 // Server Sent Event
-import cors from '../middleware/cors.js'
+import cors from "../middleware/cors.js";
 
 const sse = (req, res) => {
   res.setHeader("Content-Type", "text/event-stream");
@@ -11,9 +11,13 @@ const sse = (req, res) => {
     res.write(`data: ${new Date().toISOString()}\n\n`);
   }, 1000);
 
-  req.connection.addListener("close", () => {
-    clearInterval(interval);
-  }, false);
-}
+  req.connection.addListener(
+    "close",
+    () => {
+      clearInterval(interval);
+    },
+    false
+  );
+};
 
 export default cors(sse);
