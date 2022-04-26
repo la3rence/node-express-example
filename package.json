@@ -16,7 +16,8 @@
     "start": "npm run swagger; node server.js",
     "test": "mocha --timeout 10000 --exit",
     "test:grep": "mocha --timeout 10000 --exit -g",
-    "swagger": "node ./swagger/autogen.js"
+    "swagger": "node ./swagger/autogen.js && prettier --write ./swagger/output.json",
+    "format": "prettier --write . --ignore-unknown"
   },
   "dependencies": {
     "dotenv": "16.0.0",
