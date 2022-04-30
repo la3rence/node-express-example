@@ -18,7 +18,7 @@
     "test:grep": "mocha --timeout 10000 --exit -g",
     "swagger": "node ./swagger/autogen.js && prettier --write ./swagger/output.json",
     "format": "prettier --write . --ignore-unknown",
-    "netlify-build": "netlify-lambda build express"
+    "netlify-build": "netlify-lambda build ."
   },
   "dependencies": {
     "dotenv": "16.0.0",
