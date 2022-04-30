@@ -22,7 +22,7 @@ podTemplate(label: label, containers: [
       container('docker') {
         sh "docker version"
         sh "echo $CI_REGISTRY_PASSWORD | docker login -u $CI_REGISTRY_USER --password-stdin $CI_REGISTRY"
-        sh "docker build -t ${CI_REGISTRY}/dockerhub2019/express-demo:${BUILD_NUMBER}"
+        sh "docker build -t ${CI_REGISTRY}/dockerhub2019/express-demo:${BUILD_NUMBER} ."
         sh "docker push ${CI_REGISTRY}/dockerhub2019/express-demo:${BUILD_NUMBER}"
       }
     }
