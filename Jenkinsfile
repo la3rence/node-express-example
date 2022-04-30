@@ -1,4 +1,4 @@
-def label = "slave-${UUID.randomUUID().toString()}"
+def label = "nodejs-${UUID.randomUUID().toString()}"
 podTemplate(label: label, containers: [
   containerTemplate(name: 'node', image: 'node:lts', command: 'cat', ttyEnabled: true),
   containerTemplate(name: 'docker', image: 'docker:latest', command: 'cat', ttyEnabled: true),
@@ -14,6 +14,7 @@ podTemplate(label: label, containers: [
 
     stage('Build & Test') {
       container('node') {
+        sh "printenv"
         sh "npm i"
         sh "npm test"
       }
