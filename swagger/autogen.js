@@ -6,7 +6,7 @@ const { BASEPATH, swaggerJSONPath, endpointFiles } = config;
 const doc = {
   info: {
     title: "Express API",
-    description: "github.com/lonor/express-api",
+    description: "[Source Code](https://github.com/lonor/express-api)",
   },
   servers: [
     {
@@ -14,8 +14,13 @@ const doc = {
       description: "Local",
     },
     {
-      url: "https://node.lawrenceli.me" + BASEPATH,
-      description: "Vercel",
+      url: "https://{URL}",
+      description: "Custom Server URL",
+      variables: {
+        URL: {
+          default: "node.lawrenceli.me/api",
+        },
+      },
     },
   ],
 };
