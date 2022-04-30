@@ -1,5 +1,4 @@
 import express from "express";
-// import logger from "morgan";
 import { expressLogger } from "./middleware/logger.js";
 import swaggerUiExpress from "swagger-ui-express";
 import sse from "./api/sse.js";
@@ -17,7 +16,6 @@ const { BASEPATH, swaggerUIPath, swaggerJSONPath } = config;
 const swaggerSpec = JSON.parse(await fs.readFile(swaggerJSONPath));
 
 const app = express();
-// app.use(logger("dev"));
 app.use(expressLogger);
 const router = express.Router();
 router.use(express.json());
