@@ -2,3 +2,6 @@
   command = "npm install && npm run netlify-build"
   functions = "functions"
   node_bundler = "esbuild"
+
+[build.environment]
+  NODE_VERSION = "14.19.1"
