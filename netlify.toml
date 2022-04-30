@@ -4,4 +4,4 @@
   node_bundler = "esbuild"
 
 [build.environment]
-  NODE_VERSION = "14.19.1"
+  NODE_VERSION = "17.9.0"
