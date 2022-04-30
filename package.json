@@ -13,7 +13,8 @@
     "**/*": "prettier --write --ignore-unknown"
   },
   "scripts": {
-    "start": "npm run swagger; node server.js",
+    "dev": "npm run swagger; node server.js",
+    "start": "node server.js",
     "test": "mocha --timeout 10000 --exit",
     "test:grep": "mocha --timeout 10000 --exit -g",
     "swagger": "node ./swagger/autogen.js && prettier --write ./swagger/output.json",
