@@ -1,13 +1,18 @@
 import winston from "winston";
 import expressWinston from "express-winston";
 
+// touching a file seems not allowed on Serverless platform.
+const allowedTouchFile = process.env.VERCEL !== "1";
+
+const transports = [new winston.transports.Console()];
+if (allowedTouchFile) {
+  transports.push(
+    new winston.transports.File({ filename: "logs/winston.log" })
+  );
+}
+
 const logOptions = {
-  transports: [
-    new winston.transports.Console(),
-    new winston.transports.File({
-      filename: "logs/winston.log",
-    }),
-  ],
+  transports,
   format: winston.format.combine(
     winston.format.colorize(),
     winston.format.cli()
