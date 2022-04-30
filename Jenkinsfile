@@ -1,0 +1,32 @@
+def label = "slave-${UUID.randomUUID().toString()}"
+podTemplate(label: label, containers: [
+  containerTemplate(name: 'node', image: 'node:lts', command: 'cat', ttyEnabled: true),
+  containerTemplate(name: 'docker', image: 'docker:latest', command: 'cat', ttyEnabled: true),
+  containerTemplate(name: 'kubectl', image: 'cnych/kubectl', command: 'cat', ttyEnabled: true)
+], serviceAccount: 'jenkins', volumes: [
+  hostPathVolume(mountPath: '/home/jenkins/.kube', hostPath: '/root/.kube'),
+  hostPathVolume(mountPath: '/var/run/docker.sock', hostPath: '/var/run/docker.sock')
+]) {
+  node(label) {
+    def myRepo = checkout scm
+    def gitCommit = myRepo.GIT_COMMIT
+    def gitBranch = myRepo.GIT_BRANCH
+
+    stage('Build & Test') {
+      container('node') {
+        sh "npm i"
+        sh "npm test"
+      }
+    }
+    stage('Docker Build') {
+      container('docker') {
+        sh "docker ps"
+      }
+    }
+    stage('Kubectl') {
+      container('kubectl') {
+        sh "kubectl get pods"
+      }
+    }
+  }
+}
