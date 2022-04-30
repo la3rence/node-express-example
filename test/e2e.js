@@ -2,11 +2,12 @@ import request from "supertest";
 import { expect } from "chai";
 import app from "../app.js";
 import config from "./../swagger/apiconfig.js";
+import logger from "../middleware/logger.js";
 const { BASEPATH } = config;
 
 describe("E2E Test", () => {
   before((done) => {
-    console.log("set up...");
+    logger.info("set up...");
     done();
   });
 
@@ -63,7 +64,18 @@ describe("E2E Test", () => {
       });
   });
 
+  it("should get swagger docs page", (done) => {
+    request(app)
+      .get(BASEPATH + "/docs/")
+      .expect(200, (err, res) => {
+        if (err) {
+          return done(err);
+        }
+        done();
+      });
+  });
+
   after(() => {
-    console.log("tear down...");
+    logger.info("tear down...");
   });
 });
