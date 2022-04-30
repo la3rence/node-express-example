@@ -4,15 +4,19 @@ podTemplate(label: label, containers: [
   containerTemplate(name: 'docker', image: 'docker:latest', command: 'cat', ttyEnabled: true)
   // containerTemplate(name: 'kubectl', image: 'cnych/kubectl', command: 'cat', ttyEnabled: true)
 ], serviceAccount: 'jenkins', volumes: [
-  hostPathVolume(mountPath: '/home/jenkins/.kube', hostPath: '/root/.kube'),
+  // hostPathVolume(mountPath: '/home/jenkins/.kube', hostPath: '/root/.kube'),
   hostPathVolume(mountPath: '/var/run/docker.sock', hostPath: '/var/run/docker.sock')
-]) {
+])
+{
   node(label) {
-    def myRepo = checkout scm
-    def gitCommit = myRepo.GIT_COMMIT
-    def gitBranch = myRepo.GIT_BRANCH
+    def repo = checkout scm
+    def gitCommit = repo.GIT_COMMIT
+    def gitBranch = repo.GIT_BRANCH
 
     stage('Build & Test') {
+      echo myRepo
+      echo gitCommit
+      echo gitBranch
       container('node') {
         sh "npm i"
         sh "npm test"

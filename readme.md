@@ -8,7 +8,7 @@
 npm start
 ```
 
-Will listen the tcp port 8080 to provide http service.
+This will listen the tcp port 8080 to provide the http service.
 
 ## Test
 
@@ -18,7 +18,7 @@ npm test
 
 Using `mocha`, `chai` to do the E2E testing.
 
-Using `mocha -g ${keyword}` to execute the test cases with name contains `${keyword}`.
+TIPS: Using `mocha -g ${keyword}` to execute the test cases with name contains `${keyword}`.
 or `npm run test:grep ${keyword}`.
 
 ## Env

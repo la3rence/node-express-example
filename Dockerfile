@@ -15,5 +15,3 @@ COPY . .
 
 EXPOSE 8080
 CMD [ "npm", "start" ]
-
-# docker build -t express-app:1.0.0 .
