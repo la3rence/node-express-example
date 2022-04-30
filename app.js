@@ -9,7 +9,7 @@ import timeoutResponse from "./middleware/timeout.js";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
 import config from "./swagger/apiconfig.js";
-import fs from "node:fs/promises";
+import fs from "fs/promises";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const { BASEPATH, swaggerUIPath, swaggerJSONPath } = config;
 // or use node.js 17+: import doc from './swagger-output.json' assert { type: 'json' };
