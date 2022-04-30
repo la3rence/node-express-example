@@ -10,7 +10,6 @@ podTemplate(label: label,
         def repo = checkout scm
         def gitCommit = repo.GIT_COMMIT
         def gitBranch = repo.GIT_BRANCH
-        echo repo
         echo gitCommit
         echo gitBranch
 
