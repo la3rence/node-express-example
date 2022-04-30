@@ -2,7 +2,7 @@
   "openapi": "3.0.0",
   "info": {
     "title": "Express API",
-    "description": "github.com/lonor/express-api",
+    "description": "[Source Code](https://github.com/lonor/express-api)",
     "version": "1.0.0"
   },
   "servers": [
@@ -11,8 +11,13 @@
       "description": "Local"
     },
     {
-      "url": "https://node.lawrenceli.me/api",
-      "description": "Vercel"
+      "url": "https://{URL}",
+      "description": "Custom Server URL",
+      "variables": {
+        "URL": {
+          "default": "node.lawrenceli.me/api"
+        }
+      }
     }
   ],
   "paths": {
