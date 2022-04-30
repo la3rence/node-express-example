@@ -1,5 +1,6 @@
 import cors from "../middleware/cors.js";
 import fetch from "node-fetch";
+import logger from "../middleware/logger.js";
 import "dotenv/config";
 
 const iftttKey = process.env.IFTTT_KEY;
@@ -18,7 +19,7 @@ const fetchWebhook = async (eventName, value1, value2, value3) => {
     },
   });
   const result = await response.text();
-  console.log(result);
+  logger.info(result);
   return response;
 };
 
@@ -27,7 +28,7 @@ const fetchWebhook = async (eventName, value1, value2, value3) => {
 */
 const sendToIfttt = async (req, res) => {
   let { event, text, link, imgUrl } = req.query;
-  // console.log(`Sending to IFTTT: ${event} ${text} ${link} ${imgUrl}`);
+  logger.info(`Sending to IFTTT: ${event} ${text} ${link} ${imgUrl}`);
   if (event == "" || event == undefined || event == "undefined") {
     event = defaultEventName;
   }

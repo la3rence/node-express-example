@@ -1,3 +1,5 @@
+import logger from "../middleware/logger.js";
+
 const hello = (req, res) => {
   // #swagger.description = 'Send Hello...'
   /* #swagger.parameters['name'] = {
@@ -5,19 +7,21 @@ const hello = (req, res) => {
         description: 'Your name...'
      } */
   const { name } = req.body;
+  logger.info(`${name} is coming...`);
   res.status(200).json({ hello: `${name}` });
 };
 
 const goodbye = (req, res) => {
   // #swagger.description = 'Send bye...'
   const { name } = req.params;
+  logger.info(`${name} is leaving...`);
   res.send(`bye...${name}`);
 };
 
 const slow = async (req, res) => {
-  console.log("start to do very slow jobs...");
+  logger.warn("start to do very slow jobs...");
   await sleep(6000);
-  console.log("finally end! try to send response...");
+  logger.info("finally end! try to send response...");
   res.status(200).json({ slow: "response" });
 };
 
