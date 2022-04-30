@@ -14,7 +14,7 @@ podTemplate(label: label, containers: [
     def gitBranch = repo.GIT_BRANCH
 
     stage('Build & Test') {
-      echo myRepo
+      echo repo
       echo gitCommit
       echo gitBranch
       container('node') {
