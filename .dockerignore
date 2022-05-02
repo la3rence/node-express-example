@@ -6,6 +6,7 @@ npm-debug.log
 .gitignore
 .husky
 .env
+.prettierrc.json
 Jenkinsfile
 renovate.json
 vercel.json
