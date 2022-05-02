@@ -3,24 +3,29 @@ import expressWinston from "express-winston";
 
 // touching a file seems not allowed on Serverless platform.
 const isServerless = process.env.VERCEL === "1";
+// if prod, write json logs to file.
+const isProd = process.env.NODE_ENV === "PRODUCTION";
 
 const transports = [new winston.transports.Console()];
-if (!isServerless) {
+if (isProd && !isServerless) {
   transports.push(
-    new winston.transports.File({ filename: "logs/winston.log" })
+    new winston.transports.File({
+      filename: "logs/winston.log",
+      timestamp: true,
+    })
   );
 }
 
 const logOptions = {
   transports,
   format: winston.format.combine(
-    winston.format.colorize(),
-    winston.format.cli()
+    winston.format.uncolorize({ all: !isProd }),
+    winston.format.timestamp({ format: "YYYY-MM-DD HH:mm:ss" }),
+    isProd ? winston.format.json() : winston.format.cli()
   ),
-  meta: false, // optional: control whether you want to log the meta data about the request (default to true)
-  msg: "{{res.responseTime}}ms\t{{res.statusCode}}\t{{req.method}}\t{{req.url}}", // optional: customize the default logging message. E.g. "{{res.statusCode}} {{req.method}} {{res.responseTime}}ms {{req.url}}"
+  meta: isProd,
+  msg: "{{res.responseTime}}ms  {{res.statusCode}}  {{req.method}}  {{req.url}}", // optional: customize the default logging message. E.g. "{{res.statusCode}} {{req.method}} {{res.responseTime}}ms {{req.url}}"
   expressFormat: false, // Use the default Express/morgan request formatting. Enabling this will override any msg if true. Will only output colors with colorize set to true
-  colorize: true, // Color the text and status code, using the Express/morgan color palette (text: gray, status: default green, 3XX cyan, 4XX yellow, 5XX red).
   ignoreRoute: function (req, res) {
     return false;
   }, // optional: allows to skip some log messages based on request and/or response
