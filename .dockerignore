@@ -1,6 +1,12 @@
 node_modules
 npm-debug.log
 .github
+.idea
 .vscode
 .gitignore
-readme.md
+.husky
+.env
+Jenkinsfile
+renovate.json
+vercel.json
+test/

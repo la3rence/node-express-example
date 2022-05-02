@@ -10,25 +10,31 @@ podTemplate(label: label,
         def repo = checkout scm
         def gitCommit = repo.GIT_COMMIT
         def gitBranch = repo.GIT_BRANCH
-        echo gitCommit
         echo gitBranch
+        def projectName = 'express-demo'
+        def registryNamespace = 'dockerhub2019'
+        def commitHASH = gitCommit.substring(0, 7)
+        echo commitHASH
 
-        stage('Build & Test') {
-
+        stage('Test') {
             container('node') {
-                sh "npm i"
-                sh "npm test"
+                sh """
+                npm ci
+                npm test
+                """
             }
         }
-        stage('Docker Build') {
+        stage('Build') {
             container('docker') {
-                sh "docker version"
-                sh "echo $CI_REGISTRY_PASSWORD | docker login -u $CI_REGISTRY_USER --password-stdin $CI_REGISTRY"
-                sh "docker build -t ${CI_REGISTRY}/dockerhub2019/express-demo:${BUILD_NUMBER} ."
-                sh "docker push ${CI_REGISTRY}/dockerhub2019/express-demo:${BUILD_NUMBER}"
+                sh """
+                docker version
+                echo $CI_REGISTRY_PASSWORD | docker login -u $CI_REGISTRY_USER --password-stdin $CI_REGISTRY
+                docker build -t ${CI_REGISTRY}/${registryNamespace}/${projectName}:${commitHASH} .
+                docker push ${CI_REGISTRY}/${registryNamespace}/${projectName}:${commitHASH}
+                """
             }
         }
-        // stage('Kubectl') {
+        // stage('Deploy') {
         //   container('kubectl') {
         //     sh "kubectl get pods"
         //   }
