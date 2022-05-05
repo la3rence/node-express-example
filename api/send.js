@@ -29,10 +29,10 @@ const fetchWebhook = async (eventName, value1, value2, value3) => {
 const sendToIfttt = async (req, res) => {
   let { event, text, link, imgUrl } = req.query;
   logger.info(`Sending to IFTTT: ${event} ${text} ${link} ${imgUrl}`);
-  if (event == "" || event == undefined || event == "undefined") {
+  if (event === "" || event === undefined) {
     event = defaultEventName;
   }
-  if (imgUrl == "" || imgUrl == undefined || imgUrl == "undefined") {
+  if (imgUrl === "" || imgUrl === undefined) {
     imgUrl = defaultImageUrl;
   }
   const response = await fetchWebhook(event, text, link, imgUrl);

@@ -7,6 +7,7 @@ const isServerless = process.env.VERCEL === "1";
 const isProd = process.env.NODE_ENV === "PRODUCTION";
 
 const transports = [new winston.transports.Console()];
+/* c8 ignore start */
 if (isProd && !isServerless) {
   transports.push(
     new winston.transports.File({
@@ -15,6 +16,7 @@ if (isProd && !isServerless) {
     })
   );
 }
+/* c8 ignore stop */
 
 const logOptions = {
   transports,
