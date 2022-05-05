@@ -20,10 +20,17 @@ podTemplate(label: label,
             container('node') {
                 sh """
                 npm ci
-                npm test
+                npm run test:coverage
                 """
+                publishHTML target: [allowMissing         : false,
+                                     alwaysLinkToLastBuild: false,
+                                     keepAll              : true,
+                                     reportDir            : 'coverage/',
+                                     reportFiles          : 'index.html',
+                                     reportName           : 'Coverage']
             }
         }
+
         stage('Build') {
             container('docker') {
                 sh """
