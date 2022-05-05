@@ -15,7 +15,7 @@
   "scripts": {
     "dev": "npm run swagger; node server.js",
     "start": "node server.js",
-    "test": "mocha --timeout 10000 --exit",
+    "test": "c8 -r html mocha --timeout 10000 --exit",
     "test:grep": "mocha --timeout 10000 --exit -g",
     "swagger": "node ./swagger/autogen.js && prettier --write ./swagger/output.json",
     "format": "prettier --write . --ignore-unknown"
@@ -29,6 +29,7 @@
     "winston": "3.7.2"
   },
   "devDependencies": {
+    "c8": "7.11.2",
     "chai": "4.3.6",
     "husky": "7.0.4",
     "lint-staged": "12.4.1",

@@ -11,7 +11,7 @@ describe("E2E Test", () => {
     done();
   });
 
-  it("should send a hello", (done) => {
+  it("should post a hello world", (done) => {
     request(app)
       .post(BASEPATH + "/hello")
       .send({ name: "world" })
@@ -53,7 +53,7 @@ describe("E2E Test", () => {
       });
   });
 
-  it("should return 408 due to slow", (done) => {
+  it("should return 408 due to timeout", (done) => {
     request(app)
       .get(BASEPATH + "/slow")
       .expect(408, (err, res) => {
@@ -64,7 +64,7 @@ describe("E2E Test", () => {
       });
   });
 
-  it("should get swagger docs page", (done) => {
+  it("should get swagger ui page", (done) => {
     request(app)
       .get(BASEPATH + "/docs/")
       .expect(200, (err, res) => {
