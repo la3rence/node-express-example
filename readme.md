@@ -17,7 +17,7 @@ This will listen the tcp port 8080 to provide the http service.
 npm test
 ```
 
-Using `mocha`, `chai` to do the E2E testing.
+Using `mocha`, `chai` to do the E2E testing with `c8` generator for code coverage.
 
 TIPS: Using `mocha -g ${keyword}` to execute the test cases with name contains `${keyword}`.
 or `npm run test:grep ${keyword}`.
