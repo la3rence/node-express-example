@@ -22,15 +22,21 @@ podTemplate(label: label,
                 npm ci
                 npm test
                 """
-                // publish html
-                publishHTML target: [
-                    allowMissing: true,
-                    alwaysLinkToLastBuild: false,
-                    keepAll: true,
-                    reportDir: 'coverage',
-                    reportFiles: "${dir('coverage') { findFiles(glob: '**/*.html').join(',') ?: 'Not found' }}",
-                    reportName: 'Coverage'
-                ]
+
+                script {
+                    def docFiles
+                    dir('coverage/') {
+                        docFiles = findFiles glob: '**'
+                    }
+                    // publish html
+                    publishHTML target: [allowMissing         : false,
+                                         alwaysLinkToLastBuild: false,
+                                         keepAll              : true,
+                                         reportDir            : 'coverage/',
+                                         reportFiles          : docFiles.join(','),
+                                         reportName           : 'Coverage']
+                }
+
             }
         }
         stage('Build') {
