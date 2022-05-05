@@ -5,10 +5,27 @@ import config from "./../swagger/apiconfig.js";
 import logger from "../middleware/logger.js";
 const { BASEPATH } = config;
 
-describe("E2E Test", () => {
+describe("test: end to end testing", () => {
   before((done) => {
     logger.info("set up...");
     done();
+  });
+
+  it("should respond 200 with CORS preflight request", (done) => {
+    request(app)
+      .options(BASEPATH)
+      .set("Origin", "http://localhost:3000")
+      .set("Access-Control-Request-Method", "GET")
+      .set("Access-Control-Request-Headers", "X-PINGOTHER, Content-Type")
+      .expect(200)
+      .expect("Access-Control-Allow-Origin", "*")
+      .end((err, res) => {
+        if (err) {
+          logger.error(err);
+          done(err);
+        }
+        done();
+      });
   });
 
   it("should post a hello world", (done) => {
