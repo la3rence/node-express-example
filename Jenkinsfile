@@ -22,6 +22,15 @@ podTemplate(label: label,
                 npm ci
                 npm test
                 """
+                // publish html
+                publishHTML target: [
+                    allowMissing: false,
+                    alwaysLinkToLastBuild: false,
+                    keepAll: true,
+                    reportDir: 'coverage',
+                    reportFiles: 'index.html',
+                    reportName: 'Coverage Report'
+                ]
             }
         }
         stage('Build') {
