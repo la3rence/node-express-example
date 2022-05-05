@@ -1,6 +1,7 @@
 # Express Demo
 
 [![Mocha CI](https://github.com/Lonor/express-api/actions/workflows/ci.yaml/badge.svg)](https://github.com/Lonor/express-api/actions/workflows/ci.yaml)
+[![codecov](https://codecov.io/gh/Lonor/express-api/branch/main/graph/badge.svg?token=KI6j0Pvoid)](https://codecov.io/gh/Lonor/express-api)
 
 ## Start
 
