@@ -20,25 +20,17 @@ podTemplate(label: label,
             container('node') {
                 sh """
                 npm ci
-                npm test
+                npm run test:coverage
                 """
-
-                script {
-                    def docFiles
-                    dir('coverage/') {
-                        docFiles = findFiles glob: '**'
-                    }
-                    // publish html
-                    publishHTML target: [allowMissing         : false,
-                                         alwaysLinkToLastBuild: false,
-                                         keepAll              : true,
-                                         reportDir            : 'coverage/',
-                                         reportFiles          : docFiles.join(','),
-                                         reportName           : 'Coverage']
-                }
-
+                publishHTML target: [allowMissing         : false,
+                                     alwaysLinkToLastBuild: false,
+                                     keepAll              : true,
+                                     reportDir            : 'coverage/',
+                                     reportFiles          : 'index.html',
+                                     reportName           : 'Coverage']
             }
         }
+
         stage('Build') {
             container('docker') {
                 sh """
