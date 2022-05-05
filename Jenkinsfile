@@ -24,12 +24,12 @@ podTemplate(label: label,
                 """
                 // publish html
                 publishHTML target: [
-                    allowMissing: false,
+                    allowMissing: true,
                     alwaysLinkToLastBuild: false,
                     keepAll: true,
-                    reportDir: 'coverage/lcov-report',
-                    reportFiles: 'index.html',
-                    reportName: 'Coverage Report'
+                    reportDir: 'coverage',
+                    reportFiles: "${dir('coverage') { findFiles(glob: '**/*.html').join(',') ?: 'Not found' }}",
+                    reportName: 'Coverage'
                 ]
             }
         }
