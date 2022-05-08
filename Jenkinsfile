@@ -1,4 +1,4 @@
-def label = "nodejs-${UUID.randomUUID().toString()}"
+def label = "nodejs-${UUID.randomUUID().toString().substring(0, 7)}"
 podTemplate(label: label,
         containers: [containerTemplate(name: 'node', image: 'node:lts', command: 'cat', ttyEnabled: true),
                      containerTemplate(name: 'docker', image: 'docker:latest', command: 'cat', ttyEnabled: true)

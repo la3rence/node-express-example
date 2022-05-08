@@ -3,7 +3,6 @@ import { expressLogger } from "./middleware/logger.js";
 import swaggerUiExpress from "swagger-ui-express";
 import sse from "./api/sse.js";
 import hello, { goodbye, slow } from "./api/hello.js";
-import { sendToIfttt } from "./api/send.js";
 import { corsMiddleware } from "./middleware/cors.js";
 import timeoutResponse from "./middleware/timeout.js";
 import config from "./swagger/apiconfig.js";
@@ -22,10 +21,12 @@ router.use(corsMiddleware);
 router.post("/hello", hello);
 router.get("/bye/:name", goodbye);
 router.get("/slow", slow);
-router.get("/send", sendToIfttt);
 router.get("/sse", sse);
-router.use(swaggerUIPath, swaggerUiExpress.serve);
-router.get(swaggerUIPath, swaggerUiExpress.setup(swaggerSpec));
+router.use(
+  swaggerUIPath,
+  swaggerUiExpress.serve,
+  swaggerUiExpress.setup(swaggerSpec)
+);
 app.use(BASEPATH, router);
 app.use("/", express.static(resolve("public")));
 

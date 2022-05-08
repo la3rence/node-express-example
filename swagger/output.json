@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "title": "Express API",
+    "title": "Express API - Template",
     "description": "[Source Code](https://github.com/lonor/express-api)",
     "version": "1.0.0"
   },
@@ -11,11 +11,11 @@
       "description": "Local"
     },
     {
-      "url": "https://{URL}",
+      "url": "{URL}/api",
       "description": "Custom Server URL",
       "variables": {
         "URL": {
-          "default": "node.lawrenceli.me/api"
+          "default": "https://node.lawrenceli.me"
         }
       }
     }
@@ -56,46 +56,6 @@
       "get": {
         "description": "",
         "parameters": [],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/send": {
-      "get": {
-        "description": "",
-        "parameters": [
-          {
-            "name": "event",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "text",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "link",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "imgUrl",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "responses": {
           "200": {
             "description": "OK"

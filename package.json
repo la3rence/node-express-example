@@ -13,7 +13,7 @@
     "**/*": "prettier --write --ignore-unknown"
   },
   "scripts": {
-    "dev": "npm run swagger; node server.js",
+    "dev": "npm run swagger; npm start",
     "start": "node server.js",
     "test": "mocha --timeout 10000 --exit",
     "test:coverage": "c8 --reporter=lcov -r html -r text npm test",
