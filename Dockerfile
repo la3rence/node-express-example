@@ -9,7 +9,7 @@ ENV NODE_ENV=PRODUCTION
 COPY package*.json ./
 
 # building your code for production
-RUN npm ci --only=production
+RUN npm set-script prepare "" && npm ci --only=production
 
 # Bundle app source
 COPY . .

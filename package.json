@@ -19,7 +19,8 @@
     "test:coverage": "c8 --reporter=lcov -r html -r text npm test",
     "test:grep": "mocha --timeout 10000 --exit -g",
     "swagger": "node ./swagger/autogen.js && prettier --write ./swagger/output.json",
-    "format": "prettier --write . --ignore-unknown"
+    "format": "prettier --write . --ignore-unknown",
+    "prepare": "husky install"
   },
   "dependencies": {
     "dotenv": "16.0.0",
