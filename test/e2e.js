@@ -30,13 +30,13 @@ describe("test: end to end testing", () => {
 
   it("should post a hello world", (done) => {
     request(app)
-      .post(BASEPATH + "/hello")
+      .get(BASEPATH + "/hello")
       .send({ name: "world" })
       .expect(200, (err, res) => {
         if (err) {
           return done(err);
         }
-        expect(res.body).to.have.property("hello");
+        expect(res.body).to.have.property("hello", "world");
         done();
       });
   });

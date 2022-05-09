@@ -28,7 +28,7 @@ const sleep = async (time) =>
     setTimeout(resolve, time);
   });
 
-helloRouter.post("/hello", hello);
+helloRouter.get("/hello", hello);
 helloRouter.get("/bye/:name", goodbye);
 helloRouter.get("/slow", slow);
 export default helloRouter;
