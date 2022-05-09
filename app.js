@@ -2,7 +2,7 @@ import express from "express";
 import { expressLogger } from "./middleware/logger.js";
 import swaggerUiExpress from "swagger-ui-express";
 import sse from "./api/sse.js";
-import hello, { goodbye, slow } from "./api/hello.js";
+import { helloRouter } from "./api/hello.js";
 import { corsMiddleware } from "./middleware/cors.js";
 import timeoutResponse from "./middleware/timeout.js";
 import config from "./swagger/apiconfig.js";
@@ -18,9 +18,8 @@ const router = express.Router();
 router.use(express.json());
 router.use(timeoutResponse);
 router.use(corsMiddleware);
-router.post("/hello", hello);
-router.get("/bye/:name", goodbye);
-router.get("/slow", slow);
+// API Router
+router.use(helloRouter);
 router.get("/sse", sse);
 router.use(
   swaggerUIPath,

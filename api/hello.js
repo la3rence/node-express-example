@@ -1,4 +1,6 @@
 import logger from "../middleware/logger.js";
+import express from "express";
+const helloRouter = express.Router();
 
 const hello = (req, res) => {
   // #swagger.description = 'Send Hello...'
@@ -30,5 +32,8 @@ const sleep = async (time) =>
     setTimeout(resolve, time);
   });
 
+helloRouter.post("/hello", hello);
+helloRouter.get("/bye/:name", goodbye);
+helloRouter.get("/slow", slow);
 export default hello;
-export { goodbye, slow };
+export { helloRouter };
