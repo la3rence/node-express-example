@@ -28,7 +28,7 @@ describe("test: end to end testing", () => {
       });
   });
 
-  it("should post a hello world", (done) => {
+  it("should get a hello world", (done) => {
     request(app)
       .get(BASEPATH + "/hello?name=world")
       .expect(200, (err, res) => {
@@ -36,6 +36,19 @@ describe("test: end to end testing", () => {
           return done(err);
         }
         expect(res.body).to.have.property("hello", "world");
+        done();
+      });
+  });
+
+  it("should post a goodbye", (done) => {
+    request(app)
+      .post(BASEPATH + "/bye")
+      .send({ name: process.env.USER })
+      .expect(200, (err, res) => {
+        if (err) {
+          return done(err);
+        }
+        expect(res.text).to.contain("bye...");
         done();
       });
   });
