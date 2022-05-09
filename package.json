@@ -6,7 +6,7 @@
   "engines": {
     "node": ">=14.16"
   },
-  "author": "Lawrence",
+  "author": "Lawrence Li",
   "homepage": "https://github.com/Lonor/express-api",
   "license": "MIT",
   "lint-staged": {

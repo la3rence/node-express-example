@@ -3,15 +3,14 @@ import express from "express";
 const helloRouter = express.Router();
 
 const hello = (req, res) => {
-  // #swagger.description = 'Send Hello...'
-  const { name } = req.body;
+  const { name } = req.query;
   logger.info(`${name} is coming...`);
   res.status(200).json({ hello: `${name}` });
 };
 
 const goodbye = (req, res) => {
   // #swagger.description = 'Send bye...'
-  const { name } = req.params;
+  const { name } = req.body;
   logger.info(`${name} is leaving...`);
   res.send(`bye...${name}`);
 };
@@ -29,6 +28,6 @@ const sleep = async (time) =>
   });
 
 helloRouter.get("/hello", hello);
-helloRouter.get("/bye/:name", goodbye);
+helloRouter.post("/bye", goodbye);
 helloRouter.get("/slow", slow);
 export default helloRouter;

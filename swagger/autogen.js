@@ -1,12 +1,13 @@
 import swaggerAutogen from "swagger-autogen";
 import config from "./apiconfig.js";
-
-const { BASEPATH, swaggerJSONPath, endpointFiles } = config;
-
+const { BASEPATH, swaggerJSONPath, endpointFiles, packageInfo } = config;
+const { name, homepage, version, license } = packageInfo;
 const doc = {
   info: {
-    title: "Express API - Template",
-    description: "[Source Code](https://github.com/lonor/express-api)",
+    title: name,
+    description: `[Source Code](${homepage})`,
+    version,
+    license,
   },
   servers: [
     {

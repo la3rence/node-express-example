@@ -6,8 +6,9 @@ import helloRouter from "./api/hello.js";
 import { corsMiddleware } from "./middleware/cors.js";
 import timeoutResponse from "./middleware/timeout.js";
 import config from "./swagger/apiconfig.js";
-import fs from "node:fs/promises";
 import { resolve } from "path";
+import fs from "node:fs/promises";
+
 const { BASEPATH, swaggerUIPath, swaggerJSONPath } = config;
 // or use node.js 17+: import doc from './swagger-output.json' assert { type: 'json' };
 const swaggerSpec = JSON.parse(await fs.readFile(swaggerJSONPath));

@@ -30,8 +30,7 @@ describe("test: end to end testing", () => {
 
   it("should post a hello world", (done) => {
     request(app)
-      .get(BASEPATH + "/hello")
-      .send({ name: "world" })
+      .get(BASEPATH + "/hello?name=world")
       .expect(200, (err, res) => {
         if (err) {
           return done(err);

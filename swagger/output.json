@@ -1,9 +1,10 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "title": "Express API - Template",
-    "description": "[Source Code](https://github.com/lonor/express-api)",
-    "version": "1.0.0"
+    "title": "express-example",
+    "description": "[Source Code](https://github.com/Lonor/express-api)",
+    "version": "0.0.1",
+    "license": "MIT"
   },
   "servers": [
     {
@@ -34,23 +35,11 @@
     },
     "/hello": {
       "get": {
-        "description": "Send Hello...",
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/bye/{name}": {
-      "get": {
-        "description": "Send bye...",
+        "description": "",
         "parameters": [
           {
             "name": "name",
-            "in": "path",
-            "required": true,
+            "in": "query",
             "schema": {
               "type": "string"
             }
@@ -59,6 +48,31 @@
         "responses": {
           "200": {
             "description": "OK"
+          }
+        }
+      }
+    },
+    "/bye": {
+      "post": {
+        "description": "Send bye...",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "example": "any"
+                  }
+                }
+              }
+            }
           }
         }
       }
