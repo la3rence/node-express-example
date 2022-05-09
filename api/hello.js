@@ -1,19 +1,16 @@
 import logger from "../middleware/logger.js";
+import express from "express";
+const helloRouter = express.Router();
 
 const hello = (req, res) => {
-  // #swagger.description = 'Send Hello...'
-  /* #swagger.parameters['name'] = {
-        in: 'body',
-        description: 'Your name...'
-     } */
-  const { name } = req.body;
+  const { name } = req.query;
   logger.info(`${name} is coming...`);
   res.status(200).json({ hello: `${name}` });
 };
 
 const goodbye = (req, res) => {
   // #swagger.description = 'Send bye...'
-  const { name } = req.params;
+  const { name } = req.body;
   logger.info(`${name} is leaving...`);
   res.send(`bye...${name}`);
 };
@@ -30,5 +27,7 @@ const sleep = async (time) =>
     setTimeout(resolve, time);
   });
 
-export default hello;
-export { goodbye, slow };
+helloRouter.get("/hello", hello);
+helloRouter.post("/bye", goodbye);
+helloRouter.get("/slow", slow);
+export default helloRouter;
