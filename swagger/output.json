@@ -21,13 +21,38 @@
     }
   ],
   "paths": {
-    "/hello": {
-      "post": {
+    "/sse": {
+      "get": {
         "description": "",
         "parameters": [],
         "responses": {
           "200": {
             "description": "OK"
+          }
+        }
+      }
+    },
+    "/hello": {
+      "post": {
+        "description": "Send Hello...",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "example": "any"
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -53,17 +78,6 @@
       }
     },
     "/slow": {
-      "get": {
-        "description": "",
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/sse": {
       "get": {
         "description": "",
         "parameters": [],
