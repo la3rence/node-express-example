@@ -11,8 +11,7 @@ podTemplate(label: label,
         def gitCommit = repo.GIT_COMMIT
         def gitBranch = repo.GIT_BRANCH
         echo gitBranch
-        def projectName = 'express-demo'
-        def registryNamespace = 'dockerhub2019'
+        def IMAGE_NAME = env.JOB_BASE_NAME
         def commitHASH = gitCommit.substring(0, 7)
         echo commitHASH
 
@@ -36,8 +35,8 @@ podTemplate(label: label,
                 sh """
                 docker version
                 echo $CI_REGISTRY_PASSWORD | docker login -u $CI_REGISTRY_USER --password-stdin $CI_REGISTRY
-                docker build -t ${CI_REGISTRY}/${registryNamespace}/${projectName}:${commitHASH} .
-                docker push ${CI_REGISTRY}/${registryNamespace}/${projectName}:${commitHASH}
+                docker build -t ${CI_REGISTRY}/${CI_REGISTRY_NAMESPACE}/${IMAGE_NAME}:${commitHASH} .
+                docker push ${CI_REGISTRY}/${CI_REGISTRY_NAMESPACE}/${IMAGE_NAME}:${commitHASH}
                 """
             }
         }
