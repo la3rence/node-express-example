@@ -4,10 +4,6 @@ const helloRouter = express.Router();
 
 const hello = (req, res) => {
   // #swagger.description = 'Send Hello...'
-  /* #swagger.parameters['name'] = {
-        in: 'body',
-        description: 'Your name...'
-     } */
   const { name } = req.body;
   logger.info(`${name} is coming...`);
   res.status(200).json({ hello: `${name}` });
@@ -35,5 +31,4 @@ const sleep = async (time) =>
 helloRouter.post("/hello", hello);
 helloRouter.get("/bye/:name", goodbye);
 helloRouter.get("/slow", slow);
-export default hello;
-export { helloRouter };
+export default helloRouter;
