@@ -1,5 +1,7 @@
 import logger from "../middleware/logger.js";
+import timeoutResponse from "../middleware/timeout.js";
 import express from "express";
+
 const helloRouter = express.Router();
 
 const hello = (req, res) => {
@@ -29,5 +31,5 @@ const sleep = async (time) =>
 
 helloRouter.get("/hello", hello);
 helloRouter.post("/bye", goodbye);
-helloRouter.get("/slow", slow);
+helloRouter.get("/slow", timeoutResponse, slow);
 export default helloRouter;

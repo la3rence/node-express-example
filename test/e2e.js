@@ -3,7 +3,9 @@ import { expect } from "chai";
 import app from "../app.js";
 import config from "./../swagger/apiconfig.js";
 import logger from "../middleware/logger.js";
+import env from "../config/env.js";
 const { BASEPATH } = config;
+const { USER } = env;
 
 describe("test: end to end testing", () => {
   before((done) => {
@@ -43,7 +45,7 @@ describe("test: end to end testing", () => {
   it("should post a goodbye", (done) => {
     request(app)
       .post(BASEPATH + "/bye")
-      .send({ name: process.env.USER })
+      .send({ name: USER })
       .expect(200, (err, res) => {
         if (err) {
           return done(err);
