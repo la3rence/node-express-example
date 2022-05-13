@@ -1,10 +1,11 @@
 import winston from "winston";
 import expressWinston from "express-winston";
-
+import env from "./../config/env.js";
+const { VERCEL, NODE_ENV } = env;
 // touching a file seems not allowed on Serverless platform.
-const isServerless = process.env.VERCEL === "1";
+const isServerless = VERCEL === "1";
 // if prod, write json logs to file.
-const isProd = process.env.NODE_ENV === "PRODUCTION";
+const isProd = NODE_ENV === "PRODUCTION";
 
 const transports = [new winston.transports.Console()];
 /* c8 ignore start */
