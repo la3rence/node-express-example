@@ -1,5 +1,5 @@
-node_modules
 npm-debug.log
+.git/
 .github
 .idea
 .vscode
@@ -7,7 +7,12 @@ npm-debug.log
 .husky
 .env
 .prettierrc.json
+.prettierignore
 Jenkinsfile
 renovate.json
 vercel.json
 test/
+coverage/
+logs/
+node_modules/
+readme.md
