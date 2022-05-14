@@ -1,4 +1,4 @@
-def label = "nodejs-${UUID.randomUUID().toString().substring(0, 7)}"
+def label = "node-${UUID.randomUUID().toString().substring(0, 7)}"
 podTemplate(label: label,
         containers: [containerTemplate(name: 'node', image: 'node:lts', command: 'cat', ttyEnabled: true),
                      containerTemplate(name: 'docker', image: 'docker:latest', command: 'cat', ttyEnabled: true)
@@ -18,7 +18,7 @@ podTemplate(label: label,
         stage('Test') {
             container('node') {
                 sh """
-                npm ci
+                npm ci --ignore-scripts
                 npm run test:coverage
                 """
                 publishHTML target: [allowMissing         : false,
@@ -37,6 +37,7 @@ podTemplate(label: label,
                 echo $CI_REGISTRY_PASSWORD | docker login -u $CI_REGISTRY_USER --password-stdin $CI_REGISTRY
                 docker build -t ${CI_REGISTRY}/${CI_REGISTRY_NAMESPACE}/${IMAGE_NAME}:${commitHASH} .
                 docker push ${CI_REGISTRY}/${CI_REGISTRY_NAMESPACE}/${IMAGE_NAME}:${commitHASH}
+                docker rmi ${CI_REGISTRY}/${CI_REGISTRY_NAMESPACE}/${IMAGE_NAME}:${commitHASH}
                 """
             }
         }
