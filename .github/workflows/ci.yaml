@@ -41,6 +41,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           path: test-summary.md
+        if: github.event_name == 'pull_request'
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
         with:
