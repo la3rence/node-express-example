@@ -15,25 +15,23 @@ podTemplate(label: label,
         def commitHASH = gitCommit.substring(0, 7)
         echo commitHASH
 
-        stage('Test') {
-            container('node') {
-                sh """
-                npm ci --ignore-scripts
-                npm run test:coverage
-                """
-                publishHTML target: [allowMissing         : false,
-                                     alwaysLinkToLastBuild: false,
-                                     keepAll              : true,
-                                     reportDir            : 'coverage/',
-                                     reportFiles          : 'index.xml',
-                                     reportName           : 'Coverage']
+        try {
+            stage('Test') {
+                container('node') {
+                    sh """
+                    npm ci --ignore-scripts
+                    npm run test:coverage
+                    """
+                    publishHTML target: [allowMissing         : false,
+                                        alwaysLinkToLastBuild: false,
+                                        keepAll              : true,
+                                        reportDir            : 'coverage/',
+                                        reportFiles          : 'index.xml',
+                                        reportName           : 'Coverage']
+                }
             }
-        }
-
-        post {
-            always {
-                junit 'test-results.xml'
-            }
+        } finally {
+            junit 'test-results.xml'
         } 
 
         stage('Build') {
