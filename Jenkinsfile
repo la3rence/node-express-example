@@ -24,10 +24,16 @@ podTemplate(label: label,
                 publishHTML target: [allowMissing         : false,
                                      alwaysLinkToLastBuild: false,
                                      keepAll              : true,
-                                     reportDir            : './',
-                                     reportFiles          : 'test-results.xml',
-                                     reportName           : 'Test']
+                                     reportDir            : 'coverage/',
+                                     reportFiles          : 'index.xml',
+                                     reportName           : 'Coverage']
             }
+
+            post {
+                always {
+                    junit 'test-results.xml'
+                }
+            } 
         }
 
         stage('Build') {
