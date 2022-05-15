@@ -15,7 +15,7 @@
   "scripts": {
     "dev": "npm run swagger; npm start",
     "start": "node server.js",
-    "test": "mocha --timeout 10000 --exit",
+    "test": "mocha --timeout 10000 --exit --reporter mocha-junit-reporter",
     "test:coverage": "c8 --reporter=lcov -r html -r text npm test",
     "test:grep": "npm test -- -g",
     "swagger": "node ./swagger/autogen.js && npm run format",
@@ -36,6 +36,7 @@
     "husky": "8.0.1",
     "lint-staged": "12.4.1",
     "mocha": "10.0.0",
+    "mocha-junit-reporter": "2.0.2",
     "prettier": "2.6.2",
     "supertest": "6.2.3",
     "swagger-autogen": "2.21.1"

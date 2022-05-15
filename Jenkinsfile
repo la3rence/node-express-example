@@ -24,9 +24,9 @@ podTemplate(label: label,
                 publishHTML target: [allowMissing         : false,
                                      alwaysLinkToLastBuild: false,
                                      keepAll              : true,
-                                     reportDir            : 'coverage/',
-                                     reportFiles          : 'index.html',
-                                     reportName           : 'Coverage']
+                                     reportDir            : './',
+                                     reportFiles          : 'test-results.xml',
+                                     reportName           : 'Test']
             }
         }
 

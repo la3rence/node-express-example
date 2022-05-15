@@ -16,3 +16,4 @@ coverage/
 logs/
 node_modules/
 readme.md
+test-results.xml
