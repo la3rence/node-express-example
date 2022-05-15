@@ -3,7 +3,7 @@
   "info": {
     "title": "express-example",
     "description": "[Source Code](https://github.com/Lonor/express-api)",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "license": "MIT"
   },
   "servers": [

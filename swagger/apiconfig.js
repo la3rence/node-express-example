@@ -1,9 +1,6 @@
-import { fileURLToPath } from "url";
-import { dirname } from "path";
 import fs from "node:fs/promises";
-const __dirname = dirname(fileURLToPath(import.meta.url));
-const swaggerOutputFileName = "output.json";
-const swaggerJSONPath = `${__dirname}/${swaggerOutputFileName}`;
+const swaggerOutputFileName = "spec.json";
+const swaggerJSONPath = `./public/api/${swaggerOutputFileName}`;
 const packageInfo = JSON.parse(await fs.readFile("./package.json"));
 
 export default {

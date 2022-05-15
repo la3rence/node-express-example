@@ -18,7 +18,7 @@
     "test": "mocha --timeout 10000 --exit",
     "test:coverage": "c8 --reporter=lcov -r html -r text npm test",
     "test:grep": "npm test -- -g",
-    "swagger": "node ./swagger/autogen.js && prettier --write ./swagger/output.json",
+    "swagger": "node ./swagger/autogen.js && npm run format",
     "format": "prettier --write . --ignore-unknown",
     "prepare": "husky install"
   },
