@@ -28,6 +28,17 @@ jobs:
           printenv
           npx prettier --check .
           npm run test:coverage
+      - name: Test Summary
+        uses: test-summary/action@v1
+        with:
+          paths: |
+            test-results.xml
+        if: always()
+      - name: Upload test summary
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-summary
+          path: test-results.xml
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
         with:
