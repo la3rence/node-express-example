@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [14.x, 16.x]
+        node-version: [16.x]
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
@@ -35,11 +35,6 @@ jobs:
             test-results.xml
           output: "test-summary.md"
         if: always()
-      # - name: Upload test summary
-      #   uses: actions/upload-artifact@v3
-      #   with:
-      #     name: test-summary
-      #     path: test-summary.md
       - name: PR Comment
         uses: machine-learning-apps/pr-comment@1.0.0
         env:
