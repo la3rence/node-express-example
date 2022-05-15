@@ -35,7 +35,7 @@ jobs:
             test-results.xml
         if: always()
       - name: Upload test summary
-        uses: actions/
+        uses: actions/upload-artifact@v3
         with:
           name: test-summary
           path: test-summary.md
