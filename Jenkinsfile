@@ -28,13 +28,13 @@ podTemplate(label: label,
                                      reportFiles          : 'index.xml',
                                      reportName           : 'Coverage']
             }
-
-            post {
-                always {
-                    junit 'test-results.xml'
-                }
-            } 
         }
+
+        post {
+            always {
+                junit 'test-results.xml'
+            }
+        } 
 
         stage('Build') {
             container('docker') {
