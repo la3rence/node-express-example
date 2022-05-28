@@ -1,5 +1,5 @@
 {
-  "name": "express-example",
+  "name": "node-express-example",
   "version": "0.0.1",
   "exports": "./app.js",
   "type": "module",
@@ -7,7 +7,7 @@
     "node": ">=14.16"
   },
   "author": "Lawrence Li",
-  "homepage": "https://github.com/Lonor/express-api",
+  "homepage": "https://github.com/Lonor/node-express-example",
   "license": "MIT",
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
