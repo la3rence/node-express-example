@@ -8,3 +8,4 @@ logs/
 coverage/
 .env
 test-results.xml
+test-summary.md
