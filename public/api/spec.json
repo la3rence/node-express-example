@@ -9,7 +9,7 @@
   "servers": [
     {
       "url": "http://localhost:8080/api",
-      "description": "Local Test"
+      "description": "Local"
     },
     {
       "url": "{URL}/api",
