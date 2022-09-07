@@ -28,7 +28,7 @@
     "express-winston": "4.2.0",
     "node-fetch": "3.2.10",
     "swagger-ui-express": "4.5.0",
-    "winston": "3.8.1"
+    "winston": "3.8.2"
   },
   "devDependencies": {
     "c8": "7.12.0",
