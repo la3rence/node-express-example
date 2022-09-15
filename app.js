@@ -29,8 +29,3 @@ app.use(BASEPATH, router);
 app.use("/", express.static(resolve("public")));
 
 export default app;
-
-// vercel edge functions
-export const config = {
-  runtime: "experimental-edge",
-};
