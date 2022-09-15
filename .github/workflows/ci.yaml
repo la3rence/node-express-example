@@ -47,7 +47,7 @@ jobs:
         run: |
           printenv
           npx prettier --check .
-          npm run test:coverage
+          pnpm run test:coverage
 
       - name: Test Summary
         uses: test-summary/action@v1
@@ -71,8 +71,8 @@ jobs:
 
       - name: Generate Swagger Spec JSON
         run: |
-          npm install
-          npm run swagger
+          pnpm install
+          pnpm run swagger
 
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
