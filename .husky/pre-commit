@@ -1,6 +1,7 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
+git diff --check
 npm run swagger
 npm run test:coverage
 npx lint-staged

@@ -77,7 +77,7 @@ jobs:
 
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: "chore: update swagger spec [ci skip]"
+          commit_message: "chore: auto-format code style [ci skip]"
           file_pattern: ":/*.*"
           commit_user_name: github-actions[bot]
           commit_user_email: github-actions[bot]@users.noreply.github.com
