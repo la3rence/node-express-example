@@ -4,11 +4,11 @@ import swaggerUiExpress from "swagger-ui-express";
 import sse from "./api/sse.js";
 import helloRouter from "./api/hello.js";
 import { corsMiddleware } from "./middleware/cors.js";
-import config from "./swagger/apiconfig.js";
+import apiConfig from "./swagger/apiconfig.js";
 import { resolve } from "path";
 import fs from "node:fs/promises";
 
-const { BASEPATH, swaggerUIPath, swaggerJSONPath } = config;
+const { BASEPATH, swaggerUIPath, swaggerJSONPath } = apiConfig;
 // or use node.js 17+: import doc from './swagger-output.json' assert { type: 'json' };
 const swaggerSpec = JSON.parse(await fs.readFile(swaggerJSONPath));
 
@@ -29,3 +29,8 @@ app.use(BASEPATH, router);
 app.use("/", express.static(resolve("public")));
 
 export default app;
+
+// vercel edge functions
+export const config = {
+  runtime: "experimental-edge",
+};

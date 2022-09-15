@@ -13,12 +13,12 @@
     "**/*": "prettier --write --ignore-unknown"
   },
   "scripts": {
-    "dev": "npm run swagger; npm start",
+    "dev": "pnpm run swagger; pnpm start",
     "start": "node server.js",
     "test": "mocha --timeout 10000 --exit --reporter mocha-junit-reporter",
     "test:coverage": "c8 --reporter=lcov -r html -r text npm test",
-    "test:grep": "npm test -- -g",
-    "swagger": "node ./swagger/autogen.js && npm run format",
+    "test:grep": "pnpm test -- -g",
+    "swagger": "node ./swagger/autogen.js && pnpm run format",
     "format": "prettier --write . --ignore-unknown",
     "prepare": "husky install"
   },
