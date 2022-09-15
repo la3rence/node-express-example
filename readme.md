@@ -6,7 +6,7 @@
 ## Start
 
 ```sh
-npm start
+pnpm start
 ```
 
 This will listen the tcp port 8080 to provide the http service.
@@ -14,14 +14,14 @@ This will listen the tcp port 8080 to provide the http service.
 ## Test
 
 ```sh
-npm test
+pnpm test
 ```
 
 Using `mocha`, `chai` to do the E2E testing. (Assertion library and test framework)
-Using `c8` to do the code coverage. Try `npm run test:coverage` to see the coverage report under the `coverage` directory.
+Using `c8` to do the code coverage. Try `pnpm run test:coverage` to see the coverage report under the `coverage` directory.
 
 TIPS: Using `mocha -g ${keyword}` to execute the test cases with name contains `${keyword}`.
-or `npm run test:grep ${keyword}`.
+or `pnpm run test:grep ${keyword}`.
 
 ## Env
 
