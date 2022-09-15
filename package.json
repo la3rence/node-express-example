@@ -16,10 +16,11 @@
     "dev": "pnpm run swagger; pnpm start",
     "start": "node server.js",
     "test": "mocha --timeout 10000 --exit --reporter mocha-junit-reporter",
-    "test:coverage": "c8 --reporter=lcov -r html -r text npm test",
+    "test:coverage": "c8 --reporter=lcov -r html -r text pnpm test",
     "test:grep": "pnpm test -- -g",
     "swagger": "node ./swagger/autogen.js && pnpm run format",
     "format": "prettier --write . --ignore-unknown",
+    "test:fmt": "prettier --check .",
     "prepare": "husky install"
   },
   "dependencies": {

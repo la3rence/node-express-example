@@ -46,7 +46,8 @@ jobs:
           IFTTT_KEY: ${{ secrets.IFTTT_KEY }}
         run: |
           printenv
-          npx prettier --check .
+          pnpm run format
+          pnpm run test:fmt
           pnpm run test:coverage
 
       - name: Test Summary
