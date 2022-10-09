@@ -4,7 +4,7 @@ specifiers:
   c8: 7.12.0
   chai: 4.3.6
   dotenv: 16.0.2
-  express: 4.18.1
+  express: 4.18.2
   express-winston: 4.2.0
   husky: 8.0.1
   lint-staged: 13.0.3
@@ -19,10 +19,10 @@ specifiers:
 
 dependencies:
   dotenv: 16.0.2
-  express: 4.18.1
+  express: 4.18.2
   express-winston: 4.2.0_winston@3.8.2
   node-fetch: 3.2.10
-  swagger-ui-express: 4.5.0_express@4.18.1
+  swagger-ui-express: 4.5.0_express@4.18.2
   winston: 3.8.2
 
 devDependencies:
@@ -279,10 +279,10 @@ packages:
     engines: { node: ">=8" }
     dev: true
 
-  /body-parser/1.20.0:
+  /body-parser/1.20.1:
     resolution:
       {
-        integrity: sha512-DfJ+q6EPcGKZD1QWUjSpqp+Q7bDQTsQIF4zfUAtZ6qk+H/3/QRhg9CEp39ss+/T2vw0+HaidC0ecJj/DRLIaKg==,
+        integrity: sha512-jWi7abTbYwajOytWCQc37VulmWiRae5RyTpaCyDcS5/lMdtwSz5lOpDE67srw/HYe35f1z3fDQw+3txg7gNtWw==,
       }
     engines: { node: ">= 0.8", npm: 1.2.8000 || >= 1.4.16 }
     dependencies:
@@ -294,7 +294,7 @@ packages:
       http-errors: 2.0.0
       iconv-lite: 0.4.24
       on-finished: 2.4.1
-      qs: 6.10.3
+      qs: 6.11.0
       raw-body: 2.5.1
       type-is: 1.6.18
       unpipe: 1.0.0
@@ -918,16 +918,16 @@ packages:
       winston: 3.8.2
     dev: false
 
-  /express/4.18.1:
+  /express/4.18.2:
     resolution:
       {
-        integrity: sha512-zZBcOX9TfehHQhtupq57OF8lFZ3UZi08Y97dwFCkD8p9d/d2Y3M+ykKcwaMDEL+4qyUolgBDX6AblpR3fL212Q==,
+        integrity: sha512-5/PsL6iGPdfQ/lKM1UuielYgv3BUoJfz1aUwU9vHZ+J7gyvwdQXFEBIEIaxeGf0GIcreATNyBExtalisDbuMqQ==,
       }
     engines: { node: ">= 0.10.0" }
     dependencies:
       accepts: 1.3.8
       array-flatten: 1.1.1
-      body-parser: 1.20.0
+      body-parser: 1.20.1
       content-disposition: 0.5.4
       content-type: 1.0.4
       cookie: 0.5.0
@@ -946,7 +946,7 @@ packages:
       parseurl: 1.3.3
       path-to-regexp: 0.1.7
       proxy-addr: 2.0.7
-      qs: 6.10.3
+      qs: 6.11.0
       range-parser: 1.2.1
       safe-buffer: 5.2.1
       send: 0.18.0
@@ -2060,16 +2060,6 @@ packages:
       ipaddr.js: 1.9.1
     dev: false
 
-  /qs/6.10.3:
-    resolution:
-      {
-        integrity: sha512-wr7M2E0OFRfIfJZjKGieI8lBKb7fRCH4Fv5KNPEs7gJ8jadvotdsS08PzOKR7opXhZ/Xkjtt3WF9g38drmyRqQ==,
-      }
-    engines: { node: ">=0.6" }
-    dependencies:
-      side-channel: 1.0.4
-    dev: false
-
   /qs/6.11.0:
     resolution:
       {
@@ -2078,7 +2068,6 @@ packages:
     engines: { node: ">=0.6" }
     dependencies:
       side-channel: 1.0.4
-    dev: true
 
   /qs/6.9.3:
     resolution:
@@ -2540,7 +2529,7 @@ packages:
       }
     dev: false
 
-  /swagger-ui-express/4.5.0_express@4.18.1:
+  /swagger-ui-express/4.5.0_express@4.18.2:
     resolution:
       {
         integrity: sha512-DHk3zFvsxrkcnurGvQlAcLuTDacAVN1JHKDgcba/gr2NFRE4HGwP1YeHIXMiGznkWR4AeS7X5vEblNn4QljuNA==,
@@ -2549,7 +2538,7 @@ packages:
     peerDependencies:
       express: ">=4.0.0"
     dependencies:
-      express: 4.18.1
+      express: 4.18.2
       swagger-ui-dist: 4.14.0
     dev: false
 
