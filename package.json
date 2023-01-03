@@ -34,7 +34,7 @@
   "devDependencies": {
     "c8": "7.12.0",
     "chai": "4.3.7",
-    "husky": "8.0.2",
+    "husky": "8.0.3",
     "lint-staged": "13.1.0",
     "mocha": "10.2.0",
     "mocha-junit-reporter": "2.0.2",
