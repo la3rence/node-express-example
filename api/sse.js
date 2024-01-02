@@ -16,7 +16,7 @@ const sse = (req, res) => {
     () => {
       clearInterval(interval);
     },
-    false
+    false,
   );
 };
 

@@ -2,6 +2,6 @@
 . "$(dirname "$0")/_/husky.sh"
 
 git diff --check
-npm run swagger
-npm run test:coverage
-npx lint-staged
+pnpm swagger
+pnpm test:coverage
+pnpm lint-staged

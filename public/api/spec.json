@@ -2,7 +2,7 @@
   "openapi": "3.0.0",
   "info": {
     "title": "node-express-example",
-    "description": "[Source Code](https://github.com/Lonor/node-express-example)",
+    "description": "[Source Code](https://github.com/la3rence/node-express-example)",
     "version": "0.0.1",
     "license": "MIT"
   },
@@ -25,7 +25,6 @@
     "/sse": {
       "get": {
         "description": "",
-        "parameters": [],
         "responses": {
           "200": {
             "description": "OK"
@@ -55,7 +54,6 @@
     "/bye": {
       "post": {
         "description": "Send bye...",
-        "parameters": [],
         "responses": {
           "200": {
             "description": "OK"
@@ -80,7 +78,6 @@
     "/slow": {
       "get": {
         "description": "",
-        "parameters": [],
         "responses": {
           "200": {
             "description": "OK"

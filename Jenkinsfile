@@ -19,8 +19,8 @@ podTemplate(label: label,
             stage('Test') {
                 container('node') {
                     sh """
-                    npm ci --ignore-scripts
-                    npm run test:coverage
+                    pnpm i
+                    pnpm test:coverage
                     """
                     publishHTML target: [allowMissing         : false,
                                         alwaysLinkToLastBuild: false,

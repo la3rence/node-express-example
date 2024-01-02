@@ -14,7 +14,7 @@ if (isProd && !isServerless) {
     new winston.transports.File({
       filename: "logs/winston.log",
       timestamp: true,
-    })
+    }),
   );
 }
 /* c8 ignore stop */
@@ -24,7 +24,7 @@ const logOptions = {
   format: winston.format.combine(
     winston.format.uncolorize({ all: !isProd }),
     winston.format.timestamp({ format: "YYYY-MM-DD HH:mm:ss" }),
-    isProd ? winston.format.json() : winston.format.cli()
+    isProd ? winston.format.json() : winston.format.cli(),
   ),
   meta: isProd,
   msg: "{{res.responseTime}}ms  {{res.statusCode}}  {{req.method}}  {{req.url}}", // optional: customize the default logging message. E.g. "{{res.statusCode}} {{req.method}} {{res.responseTime}}ms {{req.url}}"

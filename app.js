@@ -23,7 +23,7 @@ router.get("/sse", sse);
 router.use(
   swaggerUIPath,
   swaggerUiExpress.serve,
-  swaggerUiExpress.setup(swaggerSpec)
+  swaggerUiExpress.setup(swaggerSpec),
 );
 app.use(BASEPATH, router);
 app.use("/", express.static(resolve("public")));

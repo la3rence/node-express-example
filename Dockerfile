@@ -1,18 +1,17 @@
-FROM node:20
+FROM node:20-slim AS base
 
-# Create app directory
-WORKDIR /usr/src/app
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
 
-ENV NODE_ENV=PRODUCTION
-# Install app dependencies
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
-COPY package*.json ./
+RUN corepack enable
+COPY . /app
+WORKDIR /app
 
-# building your code for production
-RUN npm ci --only=production --ignore-scripts
+FROM base AS prod-deps
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --prod --frozen-lockfile
 
-# Bundle app source
-COPY . .
+FROM base
+COPY --from=prod-deps /app/node_modules /app/node_modules
 
 EXPOSE 8080
-CMD [ "npm", "start" ]
+CMD [ "pnpm", "start" ]

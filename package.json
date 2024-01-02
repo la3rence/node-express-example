@@ -1,45 +1,46 @@
 {
   "name": "node-express-example",
   "version": "0.0.1",
+  "private": true,
   "exports": "./app.js",
   "type": "module",
   "engines": {
-    "node": ">=14.16"
+    "node": ">=16"
   },
-  "author": "Lawrence Li",
-  "homepage": "https://github.com/Lonor/node-express-example",
+  "author": "Lawrence Li @la3rence",
+  "homepage": "https://github.com/la3rence/node-express-example",
   "license": "MIT",
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
   },
   "scripts": {
-    "dev": "pnpm run swagger; pnpm start",
+    "dev": "pnpm swagger; pnpm start",
     "start": "node server.js",
     "test": "mocha --timeout 10000 --exit --reporter mocha-junit-reporter",
     "test:coverage": "c8 --reporter=lcov -r html -r text pnpm test",
     "test:grep": "pnpm test -- -g",
-    "swagger": "node ./swagger/autogen.js && pnpm run format",
-    "format": "prettier --write . --ignore-unknown",
+    "swagger": "node ./swagger/autogen.js && pnpm fmt",
+    "fmt": "prettier --write . --ignore-unknown",
     "test:fmt": "prettier --check .",
     "prepare": "husky install"
   },
   "dependencies": {
-    "dotenv": "16.0.3",
+    "dotenv": "^16.3.1",
     "express": "4.18.2",
-    "express-winston": "4.2.0",
-    "node-fetch": "3.3.1",
-    "swagger-ui-express": "4.6.3",
-    "winston": "3.9.0"
+    "express-winston": "^4.2.0",
+    "node-fetch": "^3.3.2",
+    "swagger-ui-express": "^5.0.0",
+    "winston": "^3.11.0"
   },
   "devDependencies": {
-    "c8": "7.14.0",
-    "chai": "4.3.7",
-    "husky": "8.0.3",
-    "lint-staged": "13.2.2",
-    "mocha": "10.2.0",
-    "mocha-junit-reporter": "2.2.0",
-    "prettier": "2.8.8",
-    "supertest": "6.3.3",
-    "swagger-autogen": "2.23.1"
+    "c8": "^8.0.1",
+    "chai": "^5.0.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.3.0",
+    "mocha": "^10.2.0",
+    "mocha-junit-reporter": "^2.2.1",
+    "prettier": "^3.1.1",
+    "supertest": "^6.3.3",
+    "swagger-autogen": "^2.23.7"
   }
 }
