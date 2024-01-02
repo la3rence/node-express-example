@@ -11,6 +11,14 @@
       "dest": "https://petstore.swagger.io/swagger-ui.css"
     },
     {
+      "src": "/api/docs/swagger-ui-standalone-preset.js",
+      "dest": "https://petstore.swagger.io/swagger-ui-standalone-preset.js"
+    },
+    {
+      "src": "/api/docs/swagger-ui-bundle.js",
+      "dest": "https://petstore.swagger.io/swagger-ui-bundle.js"
+    },
+    {
       "src": "(.*)",
       "dest": "app.js"
     }
