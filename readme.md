@@ -1,7 +1,7 @@
 # My Express Template
 
-[![Mocha CI](https://github.com/Lonor/express-api/actions/workflows/ci.yaml/badge.svg)](https://github.com/Lonor/express-api/actions/workflows/ci.yaml)
-[![codecov](https://codecov.io/gh/Lonor/node-express-example/branch/main/graph/badge.svg?token=KI6j0Pvoid)](https://codecov.io/gh/Lonor/node-express-example)
+[![Mocha CI](https://github.com/Lonor/express-api/actions/workflows/ci.yaml/badge.svg)](https://github.com/la3rence/express-api/actions/workflows/ci.yaml)
+[![codecov](https://codecov.io/gh/la3rence/node-express-example/branch/main/graph/badge.svg?token=KI6j0Pvoid)](https://codecov.io/gh/la3rence/node-express-example)
 
 This is a demo app when I was learning Node.js with pure ESM support, test coverage, ci/cd, container support and swagger integration.
 
