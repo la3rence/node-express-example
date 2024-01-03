@@ -33,7 +33,7 @@
     "winston": "^3.11.0"
   },
   "devDependencies": {
-    "c8": "^8.0.1",
+    "c8": "^9.0.0",
     "chai": "^5.0.0",
     "husky": "^8.0.3",
     "lint-staged": "^15.0.0",
