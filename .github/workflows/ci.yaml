@@ -42,11 +42,12 @@ jobs:
           output: "test-summary.md"
         if: always()
       - name: PR Comment
-        uses: machine-learning-apps/pr-comment@1.0.0
+        uses: mshick/add-pr-comment@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          path: test-summary.md
+          message-path: |
+            test-summary.md
         if: github.event_name == 'pull_request'
 
       - name: Upload coverage to Codecov
