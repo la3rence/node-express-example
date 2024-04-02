@@ -7,13 +7,13 @@ settings:
 dependencies:
   dotenv:
     specifier: ^16.3.1
-    version: 16.3.1
+    version: 16.4.5
   express:
     specifier: 4.19.2
     version: 4.19.2
   express-winston:
     specifier: ^4.2.0
-    version: 4.2.0(winston@3.11.0)
+    version: 4.2.0(winston@3.13.0)
   node-fetch:
     specifier: ^3.3.2
     version: 3.3.2
@@ -22,7 +22,7 @@ dependencies:
     version: 5.0.0(express@4.19.2)
   winston:
     specifier: ^3.11.0
-    version: 3.11.0
+    version: 3.13.0
 
 devDependencies:
   c8:
@@ -816,10 +816,10 @@ packages:
     engines: { node: ">=0.3.1" }
     dev: true
 
-  /dotenv@16.3.1:
+  /dotenv@16.4.5:
     resolution:
       {
-        integrity: sha512-IPzF4w4/Rd94bA9imS68tZBaYyBWSCE47V1RGuMrB94iyTOIEwRmVL2x/4An+6mETpLrKJ5hQkB8W4kFAadeIQ==,
+        integrity: sha512-ZmdL2rui+eB2YwhsWzjInR8LldtZHGDoQ1ugH85ppHKwpUHL7j7rN0Ti9NCnGiQbhaZ11FpR+7ao1dNsmduNUg==,
       }
     engines: { node: ">=12" }
     dev: false
@@ -942,7 +942,7 @@ packages:
       strip-final-newline: 3.0.0
     dev: true
 
-  /express-winston@4.2.0(winston@3.11.0):
+  /express-winston@4.2.0(winston@3.13.0):
     resolution:
       {
         integrity: sha512-EMD74g63nVHi7pFleQw7KHCxiA1pjF5uCwbCfzGqmFxs9KvlDPIVS3cMGpULm6MshExMT9TjC3SqmRGB9kb7yw==,
@@ -953,7 +953,7 @@ packages:
     dependencies:
       chalk: 2.4.2
       lodash: 4.17.21
-      winston: 3.11.0
+      winston: 3.13.0
     dev: false
 
   /express@4.19.2:
@@ -2775,10 +2775,10 @@ packages:
       isexe: 2.0.0
     dev: true
 
-  /winston-transport@4.6.0:
+  /winston-transport@4.7.0:
     resolution:
       {
-        integrity: sha512-wbBA9PbPAHxKiygo7ub7BYRiKxms0tpfU2ljtWzb3SjRjv5yl6Ozuy/TkXf00HTAt+Uylo3gSkNwzc4ME0wiIg==,
+        integrity: sha512-ajBj65K5I7denzer2IYW6+2bNIVqLGDHqDw3Ow8Ohh+vdW+rv4MZ6eiDvHoKhfJFZ2auyN8byXieDDJ96ViONg==,
       }
     engines: { node: ">= 12.0.0" }
     dependencies:
@@ -2787,10 +2787,10 @@ packages:
       triple-beam: 1.4.1
     dev: false
 
-  /winston@3.11.0:
+  /winston@3.13.0:
     resolution:
       {
-        integrity: sha512-L3yR6/MzZAOl0DsysUXHVjOwv8mKZ71TrA/41EIduGpOOV5LQVodqN+QdQ6BS6PJ/RdIshZhq84P/fStEZkk7g==,
+        integrity: sha512-rwidmA1w3SE4j0E5MuIufFhyJPBDG7Nu71RkZor1p2+qHvJSZ9GYDA81AyleQcZbh/+V6HjeBdfnTZJm9rSeQQ==,
       }
     engines: { node: ">= 12.0.0" }
     dependencies:
@@ -2804,7 +2804,7 @@ packages:
       safe-stable-stringify: 2.4.3
       stack-trace: 0.0.10
       triple-beam: 1.4.1
-      winston-transport: 4.6.0
+      winston-transport: 4.7.0
     dev: false
 
   /workerpool@6.2.1:
