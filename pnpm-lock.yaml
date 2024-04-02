@@ -36,7 +36,7 @@ devDependencies:
     version: 8.0.3
   lint-staged:
     specifier: ^15.0.0
-    version: 15.2.0
+    version: 15.2.2
   mocha:
     specifier: ^10.2.0
     version: 10.4.0
@@ -155,14 +155,12 @@ packages:
     engines: { node: ">=6" }
     dev: true
 
-  /ansi-escapes@6.2.0:
+  /ansi-escapes@6.2.1:
     resolution:
       {
-        integrity: sha512-kzRaCqXnpzWs+3z5ABPQiVke+iq0KXkHo8xiWV4RPTi5Yli0l97BEQuhXV1s7+aSU/fu1kUuxgS4MsQ0fRuygw==,
+        integrity: sha512-4nJ3yixlEthEJ9Rk4vPcdBRkZvQZlYyu8j4/Mqz5sgIkddmEnH2Yj2ZrnP9S3tQOvSNRUIgVNF/1yPpRAGNRig==,
       }
     engines: { node: ">=14.16" }
-    dependencies:
-      type-fest: 3.13.1
     dev: true
 
   /ansi-regex@5.0.1:
@@ -495,7 +493,7 @@ packages:
     engines: { node: ">=18" }
     dependencies:
       slice-ansi: 5.0.0
-      string-width: 7.0.0
+      string-width: 7.1.0
     dev: true
 
   /cliui@7.0.4:
@@ -944,7 +942,7 @@ packages:
       human-signals: 5.0.0
       is-stream: 3.0.0
       merge-stream: 2.0.0
-      npm-run-path: 5.2.0
+      npm-run-path: 5.3.0
       onetime: 6.0.0
       signal-exit: 4.1.0
       strip-final-newline: 3.0.0
@@ -1615,10 +1613,10 @@ packages:
     engines: { node: ">=14" }
     dev: true
 
-  /lint-staged@15.2.0:
+  /lint-staged@15.2.2:
     resolution:
       {
-        integrity: sha512-TFZzUEV00f+2YLaVPWBWGAMq7So6yQx+GG8YRMDeOEIf95Zn5RyiLMsEiX4KTNl9vq/w+NqRJkLA1kPIo15ufQ==,
+        integrity: sha512-TiTt93OPh1OZOsb5B7k96A/ATl2AjIZo+vnzFZ6oHK5FuTk63ByDtxGQpHm+kFETjEWqgkF95M8FRXKR/LEBcw==,
       }
     engines: { node: ">=18.12.0" }
     hasBin: true
@@ -1628,7 +1626,7 @@ packages:
       debug: 4.3.4(supports-color@8.1.1)
       execa: 8.0.1
       lilconfig: 3.0.0
-      listr2: 8.0.0
+      listr2: 8.0.1
       micromatch: 4.0.5
       pidtree: 0.6.0
       string-argv: 0.3.2
@@ -1637,10 +1635,10 @@ packages:
       - supports-color
     dev: true
 
-  /listr2@8.0.0:
+  /listr2@8.0.1:
     resolution:
       {
-        integrity: sha512-u8cusxAcyqAiQ2RhYvV7kRKNLgUvtObIbhOX2NCXqvp1UU32xIg5CT22ykS2TPKJXZWJwtK3IKLiqAGlGNE+Zg==,
+        integrity: sha512-ovJXBXkKGfq+CwmKTjluEqFi3p4h8xvkxGQQAQan22YCgef4KZ1mKGjzfGh6PL6AW5Csw0QiQPNuQyH+6Xk3hA==,
       }
     engines: { node: ">=18.0.0" }
     dependencies:
@@ -1648,7 +1646,7 @@ packages:
       colorette: 2.0.20
       eventemitter3: 5.0.1
       log-update: 6.0.0
-      rfdc: 1.3.0
+      rfdc: 1.3.1
       wrap-ansi: 9.0.0
     dev: true
 
@@ -1687,7 +1685,7 @@ packages:
       }
     engines: { node: ">=18" }
     dependencies:
-      ansi-escapes: 6.2.0
+      ansi-escapes: 6.2.1
       cli-cursor: 4.0.0
       slice-ansi: 7.1.0
       strip-ansi: 7.1.0
@@ -1971,10 +1969,10 @@ packages:
     engines: { node: ">=0.10.0" }
     dev: true
 
-  /npm-run-path@5.2.0:
+  /npm-run-path@5.3.0:
     resolution:
       {
-        integrity: sha512-W4/tgAXFqFA0iL7fk0+uQ3g7wkL8xJmx3XdK0VGb4cHW//eZTtKGvFBBoRKVTpY7n6ze4NL9ly7rgXcHufqXKg==,
+        integrity: sha512-ppwTtiJZq0O/ai0z7yfudtBpWIoxM8yE6nHi1X47eFR2EWORqfbu6CnPlNsjeN683eT0qG6H/Pyf9fCcvjnnnQ==,
       }
     engines: { node: ^12.20.0 || ^14.13.1 || >=16.0.0 }
     dependencies:
@@ -2238,10 +2236,10 @@ packages:
       signal-exit: 3.0.7
     dev: true
 
-  /rfdc@1.3.0:
+  /rfdc@1.3.1:
     resolution:
       {
-        integrity: sha512-V2hovdzFbOi77/WajaSMXk2OLm+xNIeQdMMuB7icj7bk6zi2F8GGAxigcnDFpJHbNyNcgyJDiP+8nOrY5cZGrA==,
+        integrity: sha512-r5a3l5HzYlIC68TpmYKlxWjmOP6wiPJ1vWv2HeLhNsRZMrCkxeqxiHlQ21oXmQ4F3SiryXBHhAD7JZqvOJjFmg==,
       }
     dev: true
 
@@ -2494,10 +2492,10 @@ packages:
       strip-ansi: 6.0.1
     dev: true
 
-  /string-width@7.0.0:
+  /string-width@7.1.0:
     resolution:
       {
-        integrity: sha512-GPQHj7row82Hjo9hKZieKcHIhaAIKOJvFSIZXuCU9OASVZrMNUaZuz++SPVrBjnLsnk4k+z9f2EIypgxf2vNFw==,
+        integrity: sha512-SEIJCWiX7Kg4c129n48aDRwLbFb2LJmXXFrWBG4NGaRtMQ3myKPKbwrD1BKqQn74oCoNMBVrfDEr5M9YxCsrkw==,
       }
     engines: { node: ">=18" }
     dependencies:
@@ -2692,14 +2690,6 @@ packages:
     engines: { node: ">= 14.0.0" }
     dev: false
 
-  /type-fest@3.13.1:
-    resolution:
-      {
-        integrity: sha512-tLq3bSNx+xSpwvAJnzrK0Ep5CLNWjvFTOp71URMaAEWBfRb9nnJiBoUe0tF8bI4ZFO3omgBR6NvnbzVUT3Ly4g==,
-      }
-    engines: { node: ">=14.16" }
-    dev: true
-
   /type-is@1.6.18:
     resolution:
       {
@@ -2832,7 +2822,7 @@ packages:
     engines: { node: ">=18" }
     dependencies:
       ansi-styles: 6.2.1
-      string-width: 7.0.0
+      string-width: 7.1.0
       strip-ansi: 7.1.0
     dev: true
 
