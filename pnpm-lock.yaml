@@ -7,13 +7,13 @@ settings:
 dependencies:
   dotenv:
     specifier: ^16.3.1
-    version: 16.3.1
+    version: 16.4.5
   express:
     specifier: 4.19.2
     version: 4.19.2
   express-winston:
     specifier: ^4.2.0
-    version: 4.2.0(winston@3.11.0)
+    version: 4.2.0(winston@3.13.0)
   node-fetch:
     specifier: ^3.3.2
     version: 3.3.2
@@ -22,7 +22,7 @@ dependencies:
     version: 5.0.0(express@4.19.2)
   winston:
     specifier: ^3.11.0
-    version: 3.11.0
+    version: 3.13.0
 
 devDependencies:
   c8:
@@ -45,10 +45,10 @@ devDependencies:
     version: 2.2.1(mocha@10.4.0)
   prettier:
     specifier: ^3.1.1
-    version: 3.1.1
+    version: 3.2.5
   supertest:
     specifier: ^6.3.3
-    version: 6.3.3
+    version: 6.3.4
   swagger-autogen:
     specifier: ^2.23.7
     version: 2.23.7
@@ -375,6 +375,21 @@ packages:
       function-bind: 1.1.2
       get-intrinsic: 1.2.2
       set-function-length: 1.1.1
+    dev: false
+
+  /call-bind@1.0.7:
+    resolution:
+      {
+        integrity: sha512-GHTSNSYICQ7scH7sZ+M2rFopRoLh8t2bLSW6BbgrtLsahOIB5iyAVJf9GjWK3cYTDaMj4XdBpM1cA6pIS0Kv2w==,
+      }
+    engines: { node: ">= 0.4" }
+    dependencies:
+      es-define-property: 1.0.0
+      es-errors: 1.3.0
+      function-bind: 1.1.2
+      get-intrinsic: 1.2.4
+      set-function-length: 1.2.2
+    dev: true
 
   /camelcase@6.3.0:
     resolution:
@@ -745,6 +760,19 @@ packages:
       get-intrinsic: 1.2.2
       gopd: 1.0.1
       has-property-descriptors: 1.0.1
+    dev: false
+
+  /define-data-property@1.1.4:
+    resolution:
+      {
+        integrity: sha512-rBMvIzlpA8v6E+SJZoo++HAYqsLrkg7MSfIinMPFhmkorw7X+dOXVJQs+QT69zGkzMyfDnIMN2Wid1+NbL3T+A==,
+      }
+    engines: { node: ">= 0.4" }
+    dependencies:
+      es-define-property: 1.0.0
+      es-errors: 1.3.0
+      gopd: 1.0.1
+    dev: true
 
   /delayed-stream@1.0.0:
     resolution:
@@ -788,10 +816,10 @@ packages:
     engines: { node: ">=0.3.1" }
     dev: true
 
-  /dotenv@16.3.1:
+  /dotenv@16.4.5:
     resolution:
       {
-        integrity: sha512-IPzF4w4/Rd94bA9imS68tZBaYyBWSCE47V1RGuMrB94iyTOIEwRmVL2x/4An+6mETpLrKJ5hQkB8W4kFAadeIQ==,
+        integrity: sha512-ZmdL2rui+eB2YwhsWzjInR8LldtZHGDoQ1ugH85ppHKwpUHL7j7rN0Ti9NCnGiQbhaZ11FpR+7ao1dNsmduNUg==,
       }
     engines: { node: ">=12" }
     dev: false
@@ -831,6 +859,24 @@ packages:
       }
     engines: { node: ">= 0.8" }
     dev: false
+
+  /es-define-property@1.0.0:
+    resolution:
+      {
+        integrity: sha512-jxayLKShrEqqzJ0eumQbVhTYQM27CfT1T35+gCgDFoL82JLsXqTJ76zv6A0YLOgEnLUMvLzsDsGIrl8NFpT2gQ==,
+      }
+    engines: { node: ">= 0.4" }
+    dependencies:
+      get-intrinsic: 1.2.4
+    dev: true
+
+  /es-errors@1.3.0:
+    resolution:
+      {
+        integrity: sha512-Zf5H2Kxt2xjTvbJvP2ZWLEICxA6j+hAmMzIlypy4xcBg1vKVnx89Wy0GbS+kf5cwCVFFzdCFh2XSCFNULS6csw==,
+      }
+    engines: { node: ">= 0.4" }
+    dev: true
 
   /escalade@3.1.1:
     resolution:
@@ -904,7 +950,7 @@ packages:
       strip-final-newline: 3.0.0
     dev: true
 
-  /express-winston@4.2.0(winston@3.11.0):
+  /express-winston@4.2.0(winston@3.13.0):
     resolution:
       {
         integrity: sha512-EMD74g63nVHi7pFleQw7KHCxiA1pjF5uCwbCfzGqmFxs9KvlDPIVS3cMGpULm6MshExMT9TjC3SqmRGB9kb7yw==,
@@ -915,7 +961,7 @@ packages:
     dependencies:
       chalk: 2.4.2
       lodash: 4.17.21
-      winston: 3.11.0
+      winston: 3.13.0
     dev: false
 
   /express@4.19.2:
@@ -1081,7 +1127,7 @@ packages:
       dezalgo: 1.0.4
       hexoid: 1.0.0
       once: 1.4.0
-      qs: 6.11.2
+      qs: 6.12.0
     dev: true
 
   /forwarded@0.2.0:
@@ -1157,6 +1203,20 @@ packages:
       has-proto: 1.0.1
       has-symbols: 1.0.3
       hasown: 2.0.0
+
+  /get-intrinsic@1.2.4:
+    resolution:
+      {
+        integrity: sha512-5uYhsJH8VJBTv7oslg4BznJYhDoRI6waYCxMmCdnTrcCrHA/fCFKoTFz2JKKE0HdDFUF7/oQuhzumXJK7paBRQ==,
+      }
+    engines: { node: ">= 0.4" }
+    dependencies:
+      es-errors: 1.3.0
+      function-bind: 1.1.2
+      has-proto: 1.0.3
+      has-symbols: 1.0.3
+      hasown: 2.0.2
+    dev: true
 
   /get-stream@8.0.1:
     resolution:
@@ -1235,6 +1295,16 @@ packages:
       }
     dependencies:
       get-intrinsic: 1.2.2
+    dev: false
+
+  /has-property-descriptors@1.0.2:
+    resolution:
+      {
+        integrity: sha512-55JNKuIW+vq4Ke1BjOTjM2YctQIvCT7GFzHwmfZPGo5wnrgkid0YQtnAleFSqumZm4az3n2BS+erby5ipJdgrg==,
+      }
+    dependencies:
+      es-define-property: 1.0.0
+    dev: true
 
   /has-proto@1.0.1:
     resolution:
@@ -1242,6 +1312,14 @@ packages:
         integrity: sha512-7qE+iP+O+bgF9clE5+UoBFzE65mlBiVj3tKCrlNQ0Ogwm0BjpT/gK4SlLYDMybDh5I3TCTKnPPa0oMG7JDYrhg==,
       }
     engines: { node: ">= 0.4" }
+
+  /has-proto@1.0.3:
+    resolution:
+      {
+        integrity: sha512-SJ1amZAJUiZS+PhsVLf5tGydlaVB8EdFpaSO4gmiUKUOxk8qzn5AIy4ZeJUmh22znIdk/uMAUT2pl3FxzVUH+Q==,
+      }
+    engines: { node: ">= 0.4" }
+    dev: true
 
   /has-symbols@1.0.3:
     resolution:
@@ -1258,6 +1336,16 @@ packages:
     engines: { node: ">= 0.4" }
     dependencies:
       function-bind: 1.1.2
+
+  /hasown@2.0.2:
+    resolution:
+      {
+        integrity: sha512-0hJU9SCPvmMzIBdZFqNPXWa6dqh7WdH0cII9y+CyS8rG3nL48Bclra9HmKhVVUHyPWNH5Y7xDwAB7bfgSjkUMQ==,
+      }
+    engines: { node: ">= 0.4" }
+    dependencies:
+      function-bind: 1.1.2
+    dev: true
 
   /he@1.2.0:
     resolution:
@@ -2039,10 +2127,10 @@ packages:
     hasBin: true
     dev: true
 
-  /prettier@3.1.1:
+  /prettier@3.2.5:
     resolution:
       {
-        integrity: sha512-22UbSzg8luF4UuZtzgiUOfcGM8s4tjBv6dJRT7j275NXsy2jb4aJa4NNveul5x4eqlF1wuhuR2RElK71RvmVaw==,
+        integrity: sha512-3/GWa9aOC0YeD7LUfvOG2NiDyhOWRvt1k+rcKhOuYnMY24iiCphgneUfJDyFXd6rZCAnuLBv6UeAULtrhT/F4A==,
       }
     engines: { node: ">=14" }
     hasBin: true
@@ -2069,14 +2157,14 @@ packages:
       side-channel: 1.0.4
     dev: false
 
-  /qs@6.11.2:
+  /qs@6.12.0:
     resolution:
       {
-        integrity: sha512-tDNIz22aBzCDxLtVH++VnTfzxlfeK5CbqohpSqpJgj1Wg/cQbStNAz3NuqCs5vV+pjBsK4x4pN9HlVh7rcYRiA==,
+        integrity: sha512-trVZiI6RMOkO476zLGaBIzszOdFPnCCXHPG9kn0yuS1uz6xdVxPfZdB3vUig9pxPFDM9BRAgz/YUIVQ1/vuiUg==,
       }
     engines: { node: ">=0.6" }
     dependencies:
-      side-channel: 1.0.4
+      side-channel: 1.0.6
     dev: true
 
   /randombytes@2.1.0:
@@ -2189,6 +2277,17 @@ packages:
       lru-cache: 6.0.0
     dev: true
 
+  /semver@7.6.0:
+    resolution:
+      {
+        integrity: sha512-EnwXhrlwXMk9gKu5/flx5sv/an57AkRplG3hTK68W7FRDN+k+OWBj65M7719OkA82XLBxrcX0KSHj+X5COhOVg==,
+      }
+    engines: { node: ">=10" }
+    hasBin: true
+    dependencies:
+      lru-cache: 6.0.0
+    dev: true
+
   /send@0.18.0:
     resolution:
       {
@@ -2248,6 +2347,22 @@ packages:
       get-intrinsic: 1.2.2
       gopd: 1.0.1
       has-property-descriptors: 1.0.1
+    dev: false
+
+  /set-function-length@1.2.2:
+    resolution:
+      {
+        integrity: sha512-pgRc4hJ4/sNjWCSS9AmnS40x3bNMDTknHgL5UaMBTMyJnU90EgWh1Rz+MC9eFu4BuN/UwZjKQuY/1v3rM7HMfg==,
+      }
+    engines: { node: ">= 0.4" }
+    dependencies:
+      define-data-property: 1.1.4
+      es-errors: 1.3.0
+      function-bind: 1.1.2
+      get-intrinsic: 1.2.4
+      gopd: 1.0.1
+      has-property-descriptors: 1.0.2
+    dev: true
 
   /setprototypeof@1.2.0:
     resolution:
@@ -2283,6 +2398,20 @@ packages:
       call-bind: 1.0.5
       get-intrinsic: 1.2.2
       object-inspect: 1.13.1
+    dev: false
+
+  /side-channel@1.0.6:
+    resolution:
+      {
+        integrity: sha512-fDW/EZ6Q9RiO8eFG8Hj+7u/oW+XrPTIChwCOM2+th2A6OblDtYYIpve9m+KvI9Z4C9qSEXlaGR6bTEYHReuglA==,
+      }
+    engines: { node: ">= 0.4" }
+    dependencies:
+      call-bind: 1.0.7
+      es-errors: 1.3.0
+      get-intrinsic: 1.2.4
+      object-inspect: 1.13.1
+    dev: true
 
   /signal-exit@3.0.7:
     resolution:
@@ -2437,16 +2566,16 @@ packages:
       formidable: 2.1.2
       methods: 1.1.2
       mime: 2.6.0
-      qs: 6.11.2
-      semver: 7.5.4
+      qs: 6.12.0
+      semver: 7.6.0
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /supertest@6.3.3:
+  /supertest@6.3.4:
     resolution:
       {
-        integrity: sha512-EMCG6G8gDu5qEqRQ3JjjPs6+FYT1a7Hv5ApHvtSghmOFJYtsU5S+pSb6Y2EUeCEY3CmEL3mmQ8YWlPOzQomabA==,
+        integrity: sha512-erY3HFDG0dPnhw4U+udPfrzXa4xhSG+n4rxfRuZWCUvjFWwKl+OxWf/7zk50s84/fAAs7vf5QAb9uRa0cCykxw==,
       }
     engines: { node: ">=6.4.0" }
     dependencies:
@@ -2644,10 +2773,10 @@ packages:
       isexe: 2.0.0
     dev: true
 
-  /winston-transport@4.6.0:
+  /winston-transport@4.7.0:
     resolution:
       {
-        integrity: sha512-wbBA9PbPAHxKiygo7ub7BYRiKxms0tpfU2ljtWzb3SjRjv5yl6Ozuy/TkXf00HTAt+Uylo3gSkNwzc4ME0wiIg==,
+        integrity: sha512-ajBj65K5I7denzer2IYW6+2bNIVqLGDHqDw3Ow8Ohh+vdW+rv4MZ6eiDvHoKhfJFZ2auyN8byXieDDJ96ViONg==,
       }
     engines: { node: ">= 12.0.0" }
     dependencies:
@@ -2656,10 +2785,10 @@ packages:
       triple-beam: 1.4.1
     dev: false
 
-  /winston@3.11.0:
+  /winston@3.13.0:
     resolution:
       {
-        integrity: sha512-L3yR6/MzZAOl0DsysUXHVjOwv8mKZ71TrA/41EIduGpOOV5LQVodqN+QdQ6BS6PJ/RdIshZhq84P/fStEZkk7g==,
+        integrity: sha512-rwidmA1w3SE4j0E5MuIufFhyJPBDG7Nu71RkZor1p2+qHvJSZ9GYDA81AyleQcZbh/+V6HjeBdfnTZJm9rSeQQ==,
       }
     engines: { node: ">= 12.0.0" }
     dependencies:
@@ -2673,7 +2802,7 @@ packages:
       safe-stable-stringify: 2.4.3
       stack-trace: 0.0.10
       triple-beam: 1.4.1
-      winston-transport: 4.6.0
+      winston-transport: 4.7.0
     dev: false
 
   /workerpool@6.2.1:
