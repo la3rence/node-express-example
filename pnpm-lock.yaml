@@ -13,7 +13,7 @@ dependencies:
     version: 4.19.2
   express-winston:
     specifier: ^4.2.0
-    version: 4.2.0(winston@3.13.0)
+    version: 4.2.0(winston@3.13.1)
   node-fetch:
     specifier: ^3.3.2
     version: 3.3.2
@@ -22,7 +22,7 @@ dependencies:
     version: 5.0.1(express@4.19.2)
   winston:
     specifier: ^3.11.0
-    version: 3.13.0
+    version: 3.13.1
 
 devDependencies:
   c8:
@@ -695,7 +695,7 @@ packages:
       strip-final-newline: 3.0.0
     dev: true
 
-  /express-winston@4.2.0(winston@3.13.0):
+  /express-winston@4.2.0(winston@3.13.1):
     resolution: {integrity: sha512-EMD74g63nVHi7pFleQw7KHCxiA1pjF5uCwbCfzGqmFxs9KvlDPIVS3cMGpULm6MshExMT9TjC3SqmRGB9kb7yw==}
     engines: {node: '>= 6'}
     peerDependencies:
@@ -703,7 +703,7 @@ packages:
     dependencies:
       chalk: 2.4.2
       lodash: 4.17.21
-      winston: 3.13.0
+      winston: 3.13.1
     dev: false
 
   /express@4.19.2:
@@ -1235,8 +1235,8 @@ packages:
       wrap-ansi: 9.0.0
     dev: true
 
-  /logform@2.6.0:
-    resolution: {integrity: sha512-1ulHeNPp6k/LD8H91o7VYFBng5i1BDE7HoKxVbZiGFidS1Rj65qcywLxX+pVfAPoQJEjRdvKcusKwOupHCVOVQ==}
+  /logform@2.6.1:
+    resolution: {integrity: sha512-CdaO738xRapbKIMVn2m4F6KTj4j7ooJ8POVnebSgKo3KBz5axNXRAL7ZdRjIV6NOr2Uf4vjtRkxrFETOioCqSA==}
     engines: {node: '>= 12.0.0'}
     dependencies:
       '@colors/colors': 1.6.0
@@ -2009,30 +2009,30 @@ packages:
       isexe: 2.0.0
     dev: true
 
-  /winston-transport@4.7.0:
-    resolution: {integrity: sha512-ajBj65K5I7denzer2IYW6+2bNIVqLGDHqDw3Ow8Ohh+vdW+rv4MZ6eiDvHoKhfJFZ2auyN8byXieDDJ96ViONg==}
+  /winston-transport@4.7.1:
+    resolution: {integrity: sha512-wQCXXVgfv/wUPOfb2x0ruxzwkcZfxcktz6JIMUaPLmcNhO4bZTwA/WtDWK74xV3F2dKu8YadrFv0qhwYjVEwhA==}
     engines: {node: '>= 12.0.0'}
     dependencies:
-      logform: 2.6.0
+      logform: 2.6.1
       readable-stream: 3.6.2
       triple-beam: 1.4.1
     dev: false
 
-  /winston@3.13.0:
-    resolution: {integrity: sha512-rwidmA1w3SE4j0E5MuIufFhyJPBDG7Nu71RkZor1p2+qHvJSZ9GYDA81AyleQcZbh/+V6HjeBdfnTZJm9rSeQQ==}
+  /winston@3.13.1:
+    resolution: {integrity: sha512-SvZit7VFNvXRzbqGHsv5KSmgbEYR5EiQfDAL9gxYkRqa934Hnk++zze0wANKtMHcy/gI4W/3xmSDwlhf865WGw==}
     engines: {node: '>= 12.0.0'}
     dependencies:
       '@colors/colors': 1.6.0
       '@dabh/diagnostics': 2.0.3
       async: 3.2.5
       is-stream: 2.0.1
-      logform: 2.6.0
+      logform: 2.6.1
       one-time: 1.0.0
       readable-stream: 3.6.2
       safe-stable-stringify: 2.4.3
       stack-trace: 0.0.10
       triple-beam: 1.4.1
-      winston-transport: 4.7.0
+      winston-transport: 4.7.1
     dev: false
 
   /workerpool@6.5.1:
