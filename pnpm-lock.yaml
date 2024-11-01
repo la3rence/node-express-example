@@ -13,7 +13,7 @@ dependencies:
     version: 4.21.1
   express-winston:
     specifier: ^4.2.0
-    version: 4.2.0(winston@3.15.0)
+    version: 4.2.0(winston@3.16.0)
   node-fetch:
     specifier: ^3.3.2
     version: 3.3.2
@@ -22,7 +22,7 @@ dependencies:
     version: 5.0.1(express@4.21.1)
   winston:
     specifier: ^3.11.0
-    version: 3.15.0
+    version: 3.16.0
 
 devDependencies:
   c8:
@@ -733,7 +733,7 @@ packages:
       strip-final-newline: 3.0.0
     dev: true
 
-  /express-winston@4.2.0(winston@3.15.0):
+  /express-winston@4.2.0(winston@3.16.0):
     resolution: {integrity: sha512-EMD74g63nVHi7pFleQw7KHCxiA1pjF5uCwbCfzGqmFxs9KvlDPIVS3cMGpULm6MshExMT9TjC3SqmRGB9kb7yw==}
     engines: {node: '>= 6'}
     peerDependencies:
@@ -741,7 +741,7 @@ packages:
     dependencies:
       chalk: 2.4.2
       lodash: 4.17.21
-      winston: 3.15.0
+      winston: 3.16.0
     dev: false
 
   /express@4.21.1:
@@ -2018,8 +2018,8 @@ packages:
       triple-beam: 1.4.1
     dev: false
 
-  /winston@3.15.0:
-    resolution: {integrity: sha512-RhruH2Cj0bV0WgNL+lOfoUBI4DVfdUNjVnJGVovWZmrcKtrFTTRzgXYK2O9cymSGjrERCtaAeHwMNnUWXlwZow==}
+  /winston@3.16.0:
+    resolution: {integrity: sha512-xz7+cyGN5M+4CmmD4Npq1/4T+UZaz7HaeTlAruFUTjk79CNMq+P6H30vlE4z0qfqJ01VHYQwd7OZo03nYm/+lg==}
     engines: {node: '>= 12.0.0'}
     dependencies:
       '@colors/colors': 1.6.0
