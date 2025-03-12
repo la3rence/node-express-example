@@ -36,7 +36,7 @@ devDependencies:
     version: 9.1.7
   lint-staged:
     specifier: ^15.0.0
-    version: 15.4.3
+    version: 15.5.0
   mocha:
     specifier: ^11.0.0
     version: 11.1.0
@@ -1115,8 +1115,8 @@ packages:
     engines: {node: '>=14'}
     dev: true
 
-  /lint-staged@15.4.3:
-    resolution: {integrity: sha512-FoH1vOeouNh1pw+90S+cnuoFwRfUD9ijY2GKy5h7HS3OR7JVir2N2xrsa0+Twc1B7cW72L+88geG5cW4wIhn7g==}
+  /lint-staged@15.5.0:
+    resolution: {integrity: sha512-WyCzSbfYGhK7cU+UuDDkzUiytbfbi0ZdPy2orwtM75P3WTtQBzmG40cCxIa8Ii2+XjfxzLH6Be46tUfWS85Xfg==}
     engines: {node: '>=18.12.0'}
     hasBin: true
     dependencies:
