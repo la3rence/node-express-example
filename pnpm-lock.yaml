@@ -39,10 +39,10 @@ devDependencies:
     version: 16.2.5
   mocha:
     specifier: ^11.0.0
-    version: 11.7.4
+    version: 11.7.5
   mocha-junit-reporter:
     specifier: ^2.2.1
-    version: 2.2.1(mocha@11.7.4)
+    version: 2.2.1(mocha@11.7.5)
   prettier:
     specifier: ^3.1.1
     version: 3.6.2
@@ -1205,7 +1205,7 @@ packages:
     hasBin: true
     dev: true
 
-  /mocha-junit-reporter@2.2.1(mocha@11.7.4):
+  /mocha-junit-reporter@2.2.1(mocha@11.7.5):
     resolution: {integrity: sha512-iDn2tlKHn8Vh8o4nCzcUVW4q7iXp7cC4EB78N0cDHIobLymyHNwe0XG8HEHHjc3hJlXm0Vy6zcrxaIhnI2fWmw==}
     peerDependencies:
       mocha: '>=2.2.5'
@@ -1213,15 +1213,15 @@ packages:
       debug: 4.3.4
       md5: 2.3.0
       mkdirp: 3.0.1
-      mocha: 11.7.4
+      mocha: 11.7.5
       strip-ansi: 6.0.1
       xml: 1.0.1
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /mocha@11.7.4:
-    resolution: {integrity: sha512-1jYAaY8x0kAZ0XszLWu14pzsf4KV740Gld4HXkhNTXwcHx4AUEDkPzgEHg9CM5dVcW+zv036tjpsEbLraPJj4w==}
+  /mocha@11.7.5:
+    resolution: {integrity: sha512-mTT6RgopEYABzXWFx+GcJ+ZQ32kp4fMf0xvpZIIfSq9Z8lC/++MtcCnQ9t5FP2veYEP95FIYSvW+U9fV4xrlig==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     hasBin: true
     dependencies:
