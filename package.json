@@ -26,7 +26,7 @@
   },
   "dependencies": {
     "dotenv": "^17.0.0",
-    "express": "5.1.0",
+    "express": "5.2.0",
     "express-winston": "^4.2.0",
     "node-fetch": "^3.3.2",
     "swagger-ui-express": "^5.0.0",
