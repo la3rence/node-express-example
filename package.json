@@ -5,7 +5,7 @@
   "exports": "./app.js",
   "type": "module",
   "engines": {
-    "node": ">=16"
+    "node": ">=20"
   },
   "author": "Lawrence Li @la3rence",
   "homepage": "https://github.com/la3rence/node-express-example",
