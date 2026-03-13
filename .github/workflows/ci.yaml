@@ -42,7 +42,7 @@ jobs:
           output: "test-summary.md"
         if: always()
       - name: PR Comment
-        uses: mshick/add-pr-comment@v2
+        uses: mshick/add-pr-comment@v3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
