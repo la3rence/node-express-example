@@ -10,7 +10,7 @@ importers:
     dependencies:
       dotenv:
         specifier: ^17.0.0
-        version: 17.4.1
+        version: 17.4.2
       express:
         specifier: 5.2.1
         version: 5.2.1
@@ -346,8 +346,8 @@ packages:
     resolution: {integrity: sha512-PJWHUb1RFevKCwaFA9RlG5tCd+FO5iRh9A8HEtkmBH2Li03iJriB6m6JIN4rGz3K3JLawI7/veA1xzRKP6ISBw==}
     engines: {node: '>=0.3.1'}
 
-  dotenv@17.4.1:
-    resolution: {integrity: sha512-k8DaKGP6r1G30Lx8V4+pCsLzKr8vLmV2paqEj1Y55GdAgJuIqpRp5FfajGF8KtwMxCz9qJc6wUIJnm053d/WCw==}
+  dotenv@17.4.2:
+    resolution: {integrity: sha512-nI4U3TottKAcAD9LLud4Cb7b2QztQMUEfHbvhTH09bqXTxnSie8WnjPALV/WMCrJZ6UV/qHJ6L03OqO3LcdYZw==}
     engines: {node: '>=12'}
 
   dunder-proto@1.0.1:
@@ -1372,7 +1372,7 @@ snapshots:
 
   diff@7.0.0: {}
 
-  dotenv@17.4.1: {}
+  dotenv@17.4.2: {}
 
   dunder-proto@1.0.1:
     dependencies:
