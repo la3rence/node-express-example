@@ -47,7 +47,7 @@ importers:
         version: 2.2.1(mocha@11.8.0)(supports-color@8.1.1)
       prettier:
         specifier: ^3.1.1
-        version: 3.9.7
+        version: 3.9.8
       supertest:
         specifier: ^7.0.0
         version: 7.2.2(supports-color@8.1.1)
@@ -777,8 +777,8 @@ packages:
     resolution: {integrity: sha512-qcJu88Q2IWqJsDD529JKMdwGm/dvInW4HvQnRwiH9JtihJvzGOscDtHE3x1pBKeUOTysQ8kVmLnJ2kJu7yhcGA==}
     engines: {node: '>=12'}
 
-  prettier@3.9.7:
-    resolution: {integrity: sha512-T3mF5P7HFzZVLDQuCUNtJj6WK1pcpLMweMNUVwGb01bLNkH9AkKxtZvmInw8K6bnn2O3d6/5RHl6zSHiBAD0Og==}
+  prettier@3.9.8:
+    resolution: {integrity: sha512-WRFq3Wn3WId7LLROfMLdH7xaFr2jR62wU8nLO6rQUOLOxNZUviyJQs1M0iIhLexSFy+L+w0ch66wtoO2jRjG0A==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -1757,7 +1757,7 @@ snapshots:
 
   picomatch@4.0.7: {}
 
-  prettier@3.9.7: {}
+  prettier@3.9.8: {}
 
   proxy-addr@2.0.7:
     dependencies:
