@@ -10,7 +10,7 @@ importers:
     dependencies:
       dotenv:
         specifier: ^18.0.0
-        version: 18.0.3
+        version: 18.0.7
       express:
         specifier: 5.2.1
         version: 5.2.1(supports-color@8.1.1)
@@ -331,8 +331,8 @@ packages:
     resolution: {integrity: sha512-PJWHUb1RFevKCwaFA9RlG5tCd+FO5iRh9A8HEtkmBH2Li03iJriB6m6JIN4rGz3K3JLawI7/veA1xzRKP6ISBw==}
     engines: {node: '>=0.3.1'}
 
-  dotenv@18.0.3:
-    resolution: {integrity: sha512-/8CJTyL817qPnfbQrJgOEcrU3fDrJkRIoXBE566wHuvIXKOCHUZhPqGPbCPi9SogjdGnreF0TlvnTgK6J/8zpA==}
+  dotenv@18.0.7:
+    resolution: {integrity: sha512-QEvMEF8ca3GNZJJnAbOgxpj5ULhBvnMcURp+XKrtvqFNPgjBvYoswQ0Jl2cO7JzCjxZjJhr9ZuIEhlrRxMft/Q==}
     engines: {node: '>=12'}
     hasBin: true
 
@@ -1305,7 +1305,7 @@ snapshots:
 
   diff@7.0.0: {}
 
-  dotenv@18.0.3: {}
+  dotenv@18.0.7: {}
 
   dunder-proto@1.0.1:
     dependencies:
